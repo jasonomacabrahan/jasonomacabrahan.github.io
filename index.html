@@ -3,50 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Omac - Web & Systems Developer</title>
+    <meta name="description" content="Jason Omac - Web & Systems Developer Portfolio">
+    <title>Jason Omac | Web & Systems Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>JASON OMAC</h1>
-        <h2>Web & Systems Developer</h2>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">JO</span>
+                <h1>Jason Omac</h1>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                    <span class="sr-only">Menu</span>
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul id="primary-navigation" data-visible="false">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="works.html"><i class="fas fa-code"></i> Works</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="experience.html">Experience</a></li>
-            <li><a href="works.html">Sample Works</a></li>
-        </ul>
-    </nav>
-    
-    <section class="hero">
-        <p>IT graduate with a passion for crafting user-friendly websites and applications</p>
-        <a href="about.html" class="btn">Learn More About Me</a>
-    </section>
-    
-    <section class="tech-highlights">
-        <h3>Technical Expertise</h3>
-        <div class="tech-grid">
-            <div class="tech-item">
-                <h4>Front-End</h4>
-                <p>HTML, CSS, JavaScript, VueJS, ReactJS</p>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Building digital experiences that matter</h2>
+                    <p class="subtitle">IT graduate with a passion for crafting user-friendly websites and applications</p>
+                    <div class="hero-buttons">
+                        <a href="works.html" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="circle-shape"></div>
+                    <img src="images/developer-illustration.svg" alt="Developer illustration" class="developer-img">
+                </div>
             </div>
-            <div class="tech-item">
-                <h4>Back-End</h4>
-                <p>PHP, Laravel, Java, C#, SQL</p>
+        </section>
+
+        <section class="tech-stack">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Front-End</h3>
+                        <ul>
+                            <li>HTML/CSS</li>
+                            <li>JavaScript</li>
+                            <li>VueJS/ReactJS</li>
+                            <li>Tailwind/Bootstrap</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Back-End</h3>
+                        <ul>
+                            <li>PHP/Laravel</li>
+                            <li>Java/C#</li>
+                            <li>SQL/NoSQL</li>
+                            <li>API Development</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile</h3>
+                        <ul>
+                            <li>Flutter (Dart)</li>
+                            <li>React Native</li>
+                            <li>Android/iOS</li>
+                            <li>Cross-platform</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="tech-item">
-                <h4>Mobile</h4>
-                <p>Flutter (Dart), React Native</p>
+        </section>
+
+        <section class="featured-work">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/nimos-screenshot.jpg" alt="NIMOS Project Screenshot">
+                        </div>
+                        <div class="project-content">
+                            <h3>NIMOS</h3>
+                            <p>NEBAWASCO Integrated Management Operation System with modules for water billing, accounting, HRIS, and more.</p>
+                            <a href="works.html#nimos" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="images/event-system.jpg" alt="Event Management System Screenshot">
+                        </div>
+                        <div class="project-content">
+                            <h3>Activity Event Management</h3>
+                            <p>Software platform for planning, organizing, and executing events with participant management and reporting.</p>
+                            <a href="works.html#event-system" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="text-center">
+                    <a href="works.html" class="btn btn-outline">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Colleagues Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Jason's expertise in Laravel transformed our workflow. His attention to detail and problem-solving skills are exceptional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <p><strong>DICT Region XI Colleague</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <ul>
+                            <li><i class="fas fa-envelope"></i> your.email@example.com</li>
+                            <li><i class="fas fa-phone"></i> +123 456 7890</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Davao Region, Philippines</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form" netlify>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="logo">
+                        <span class="logo-icon">JO</span>
+                        <h3>Jason Omac</h3>
+                    </div>
+                    <p>Web & Systems Developer specializing in creating efficient, user-friendly digital solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="works.html">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-tech">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li>Laravel</li>
+                        <li>Flutter</li>
+                        <li>Vue/React</li>
+                        <li>SQL/NoSQL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Jason Omac. All rights reserved.</p>
             </div>
         </div>
-    </section>
-    
-    <footer>
-        <p>Contact me at: jsceon@gmail.com</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
