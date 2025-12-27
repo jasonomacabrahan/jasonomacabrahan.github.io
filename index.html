@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jason Omac - Web & Systems Developer Portfolio">
-    <title>Jason Omac | Web & Systems Developer</title>
+    <meta name="description" content="Jason Omac - Web & Mobile Systems Developer Portfolio">
+    <title>Jason Omac | Web & Mobile Systems Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -192,28 +192,24 @@
             align-items: center;
         }
 
-       .circle-shape {
+        .circle-shape {
             width: 400px;
             height: 400px;
-            /* background: rgba(255, 255, 255, 0.1); */
-            /* background: #f4f4f4; */
-            /* background: radial-gradient(circle, #1e1e2f 0%, #2c3e50 100%); */
-            /* background: linear-gradient(135deg, #e3f2fd, #bbdefb); */
             background: #f4f4f4;
-
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border-radius: 50%;
             position: absolute;
             animation: float 6s ease-in-out infinite;
-            overflow: hidden; /* Ensures the image doesn't overflow the circle */
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+        
         .circle-shape img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire circle */
+            object-fit: cover;
             border-radius: 50%;
         }
 
@@ -484,6 +480,59 @@
             line-height: 1.8;
         }
 
+        /* Portfolio Pages Section */
+        .portfolio-pages {
+            background: #f8f9ff;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .portfolio-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-item h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-item .project-type {
+            display: inline-block;
+            background: #eef2ff;
+            color: #667eea;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-tech {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .portfolio-tech span {
+            background: #f0f0f0;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            margin-right: 0.3rem;
+        }
+
         /* Works Section */
         .works {
             background: white;
@@ -533,6 +582,13 @@
             color: #666;
             margin-bottom: 1rem;
             line-height: 1.6;
+        }
+
+        .project-tech {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .project-link {
@@ -797,6 +853,12 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+            
+            .circle-shape {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -809,8 +871,14 @@
             }
 
             .tech-grid,
-            .projects-grid {
+            .projects-grid,
+            .portfolio-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .circle-shape {
+                width: 250px;
+                height: 250px;
             }
         }
     </style>
@@ -831,8 +899,10 @@
                     <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
                     <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#tech"><i class="fas fa-code"></i> Tech Stack</a></li>
                     <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-                    <li><a href="#works"><i class="fas fa-code"></i> Works</a></li>
+                    <li><a href="#portfolio"><i class="fas fa-images"></i> Portfolio</a></li>
+                    <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
@@ -843,18 +913,20 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>Building digital experiences that matter</h2>
-                    <p class="subtitle">IT graduate with a passion for crafting user-friendly websites and applications</p>
+                    <h2>Web & Mobile Systems Developer</h2>
+                    <p class="subtitle">IT graduate with passion for crafting user-friendly websites and mobile applications</p>
                     <div class="hero-buttons">
-                        <a href="#works" class="btn btn-primary">View My Work</a>
+                        <a href="#projects" class="btn btn-primary">View My Projects</a>
                         <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                    <div class="tech-highlights" style="margin-top: 2rem;">
+                        <p><strong>Specialized in:</strong> Laravel • Flutter • VueJS • React Native • PHP • Mobile Development</p>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="circle-shape">
-                        <img src="img/jason-omac.png" alt="" srcset="">
+                        <img src="img/jason-omac.png" alt="Jason Omac" srcset="">
                     </div>
-                    <i class="fas fa-laptop-code developer-img"></i>
                 </div>
             </div>
         </section>
@@ -864,34 +936,23 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
                     <div class="about-image">
-                        <div style="width: 250px; height: 250px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; margin: 0 auto;">
-                            <!-- <i class="fas fa-user"></i> -->
-                             <img src="img/jason-omac-2.png" alt="">
+                        <div style="width: 250px; height: 250px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; margin: 0 auto; overflow: hidden;">
+                            <img src="img/jason-omac-2.png" alt="Jason Omac" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>
                     <div class="about-text">
-                        <p>I'm a passionate web and systems developer with a strong background in Information Technology. I specialize in creating efficient, user-friendly digital solutions that solve real-world problems.</p>
-                        <p>With experience in both front-end and back-end development, I enjoy working with modern technologies to build responsive web applications, mobile apps, and integrated systems that enhance business operations.</p>
-                        <p>I'm always eager to learn new technologies and take on challenging projects that push the boundaries of what's possible in web development.</p>
+                        <p>Hi! I'm Jason, an IT graduate with a passion for crafting user-friendly websites and applications.</p>
                         
-                        <div class="skills-list">
-                            <div class="skill-item">
-                                <i class="fas fa-code"></i>
-                                <h4>Problem Solving</h4>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-paint-brush"></i>
-                                <h4>UI/UX Design</h4>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-users"></i>
-                                <h4>Team Collaboration</h4>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-rocket"></i>
-                                <h4>Innovation</h4>
-                            </div>
-                        </div>
+                        <p><strong>Here's what I bring to the table:</strong></p>
+                        
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                            <li><strong>Full-stack expertise:</strong> Comfortable working on both front-end (HTML, CSS, Tailwind, Bootstrap) and back-end (PHP, Laravel, Java, JavaScript, VueJS, ReactJS, SQL, Dart, C#)</li>
+                            <li><strong>Strong Laravel background:</strong> Extensive experience building scalable, secure applications including e-commerce sites, CMS, and APIs</li>
+                            <li><strong>Mobile development with Flutter:</strong> Create beautiful mobile apps for Android and iOS with single codebase (social, productivity, e-commerce apps)</li>
+                            <li><strong>Communication and problem-solving:</strong> Clear communication, meticulous attention to detail, and strong problem-solving skills</li>
+                        </ul>
+                        
+                        <p>I'm passionate about exceeding expectations and constantly learning. I'm excited to collaborate and build something great together!</p>
                     </div>
                 </div>
             </div>
@@ -899,29 +960,85 @@
 
         <section id="education" class="education">
             <div class="container">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title">Education & Achievements</h2>
                 <div class="education-timeline">
                     <div class="education-item">
                         <div class="education-content">
                             <h3>Bachelor of Science in Information Technology</h3>
-                            <h4>University of Mindanao</h4>
-                            <p>Comprehensive study in computer systems, programming, database management, and software development. Graduated with honors and specialized in web development technologies.</p>
+                            <h4>Legacy College of Compostela</h4>
+                            <p>2012 - 2017</p>
                         </div>
-                        <div class="education-date">2018-2022</div>
+                        <div class="education-date">2017</div>
                     </div>
                     <div class="education-item">
                         <div class="education-content">
-                            <h3>Senior High School - STEM Track</h3>
-                            <h4>Local High School</h4>
-                            <p>Focused on Science, Technology, Engineering, and Mathematics. Developed strong analytical and problem-solving skills that formed the foundation for my IT career.</p>
+                            <h3>Secondary Education</h3>
+                            <h4>Maryknoll Academy of Cateel</h4>
+                            <p>2008 - 2012</p>
                         </div>
-                        <div class="education-date">2016-2018</div>
+                        <div class="education-date">2012</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-content">
+                            <h3>Elementary Education</h3>
+                            <h4>Hulid Elementary School</h4>
+                            <p>2002 - 2008</p>
+                        </div>
+                        <div class="education-date">2008</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 4rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: #667eea;">Achievements & Certifications</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-width: 800px; margin: 0 auto;">
+                        <div class="skill-item">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Computer System Servicing NCII</h4>
+                            <p>2015</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Computer Hardware Servicing NCII</h4>
+                            <p>2016</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Visual Graphics Design NCIV</h4>
+                            <p>2016</p>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-award"></i>
+                            <h4>LCC Laboratory In Charge</h4>
+                            <p>2017</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem;">
+                        <h3 style="text-align: center; margin-bottom: 2rem; color: #667eea;">Trainings & Certificates</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-width: 800px; margin: 0 auto;">
+                            <div class="skill-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <h4>Google UX Design Professional Certificate</h4>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Google Cybersecurity Professional Certificate</h4>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4>Tech Trends: Data Analytics</h4>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-brain"></i>
+                                <h4>Tech Trends: Artificial Intelligence</h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="tech-stack">
+        <section id="tech" class="tech-stack">
             <div class="container">
                 <h2 class="section-title">Technical Expertise</h2>
                 <div class="tech-grid">
@@ -929,23 +1046,23 @@
                         <div class="tech-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
-                        <h3>Front-End</h3>
+                        <h3>Front-End Development</h3>
                         <ul>
-                            <li>HTML/CSS</li>
-                            <li>JavaScript</li>
-                            <li>VueJS/ReactJS</li>
-                            <li>Tailwind/Bootstrap</li>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>Tailwind CSS, Bootstrap</li>
+                            <li>VueJS, ReactJS</li>
+                            <li>JQuery</li>
                         </ul>
                     </div>
                     <div class="tech-card">
                         <div class="tech-icon">
                             <i class="fas fa-server"></i>
                         </div>
-                        <h3>Back-End</h3>
+                        <h3>Back-End Development</h3>
                         <ul>
-                            <li>PHP/Laravel</li>
-                            <li>Java/C#</li>
-                            <li>SQL/NoSQL</li>
+                            <li>PHP, Laravel</li>
+                            <li>Java, C#, VB.net</li>
+                            <li>SQL Database Design</li>
                             <li>API Development</li>
                         </ul>
                     </div>
@@ -953,13 +1070,49 @@
                         <div class="tech-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>Mobile</h3>
+                        <h3>Mobile Development</h3>
                         <ul>
                             <li>Flutter (Dart)</li>
                             <li>React Native</li>
                             <li>Android/iOS</li>
-                            <li>Cross-platform</li>
+                            <li>Cross-platform Apps</li>
                         </ul>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Database & Tools</h3>
+                        <ul>
+                            <li>MySQL, SQLite, NoSQL</li>
+                            <li>Visual Studio Code, Git</li>
+                            <li>Expo, Postman, XAMPP</li>
+                            <li>RESTful APIs, Laravel Sanctum</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 4rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; color: #667eea;">Additional Skills</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div class="tech-card">
+                            <h3>Website Designing</h3>
+                            <ul>
+                                <li>WordPress</li>
+                                <li>Shopify</li>
+                                <li>Wix</li>
+                                <li>Canva</li>
+                            </ul>
+                        </div>
+                        <div class="tech-card">
+                            <h3>Photo & Video Editing</h3>
+                            <ul>
+                                <li>Adobe Photoshop</li>
+                                <li>Adobe Lightroom</li>
+                                <li>Adobe Premiere Pro</li>
+                                <li>DaVinci Resolve</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -967,49 +1120,173 @@
 
         <section id="experience" class="experience">
             <div class="container">
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title">Work Experience</h2>
                 <div class="experience-grid">
                     <div class="experience-item">
                         <div class="experience-header">
                             <div>
                                 <div class="job-title">Information System Analyst 1</div>
-                                <div class="company">DICT Region XI</div>
+                                <div class="company">DICT Region XI Regional Office</div>
                             </div>
-                            <div class="job-date">2022 - Present</div>
+                            <div class="job-date">Dec 2021 - June 2025</div>
                         </div>
                         <div class="job-description">
-                          Served as an Information Systems Analyst for the eLGU (electronic Local Government Unit) system, providing end-to-end support to LGU stakeholders. Facilitated user training and system orientations, documented workflows and user guides, and coordinated with technical teams to ensure proper implementation and issue resolution. Specialized in stakeholder communication, user support, and producing clear, actionable documentation to enhance system usability and adoption.
+                            System analysis, development, and implementation of government IT systems. Provided technical support and training for eLGU system.
                         </div>
                     </div>
+                    
                     <div class="experience-item">
                         <div class="experience-header">
                             <div>
-                                <div class="job-title">Systems Developer</div>
-                                <div class="company">NEBAWASCO (Freelance Projects)</div>
+                                <div class="job-title">Web Designer and Developer</div>
+                                <div class="company">Freelance</div>
                             </div>
-                            <div class="job-date">2023 - 2024</div>
+                            <div class="job-date">Dec 2018 - Present</div>
                         </div>
                         <div class="job-description">
-                            Designed and implemented the NIMOS (NEBAWASCO Integrated Management Operation System) with modules for water billing, accounting, HRIS, and inventory management. Led the development of automated reporting systems that improved operational efficiency by 40%.
+                            Developed responsive websites and web applications for various clients including universities, government agencies, and private companies.
                         </div>
                     </div>
+                    
                     <div class="experience-item">
                         <div class="experience-header">
                             <div>
-                                <div class="job-title">Junior Developer</div>
-                                <div class="company">Freelance Projects</div>
+                                <div class="job-title">Project Development Officer 1</div>
+                                <div class="company">DICT Region XI Regional Office</div>
                             </div>
-                            <div class="job-date">2020 - 2021</div>
+                            <div class="job-date">July 2021 - Dec 2021</div>
                         </div>
                         <div class="job-description">
-                            Worked on various web development projects including e-commerce platforms, content management systems, and mobile applications. Gained experience in client communication, project management, and full-stack development.
+                            Assisted in IT project planning, implementation, and monitoring for regional development projects.
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="job-title">Freelance Web Application Developer</div>
+                                <div class="company">Freelance</div>
+                            </div>
+                            <div class="job-date">Jan 2020 - Present</div>
+                        </div>
+                        <div class="job-description">
+                            Developed custom web applications for various clients, focusing on Laravel-based solutions and responsive design.
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="job-title">Geographical Information System Specialist</div>
+                                <div class="company">DENR Office - CENRO Monkayo</div>
+                            </div>
+                            <div class="job-date">Feb 2019 - June 2021</div>
+                        </div>
+                        <div class="job-description">
+                            Developed GIS-based tools and visualizations for environmental management and monitoring systems.
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="job-title">Instructor 1 (IT Department)</div>
+                                <div class="company">Legacy College of Compostela, Inc.</div>
+                            </div>
+                            <div class="job-date">May 2018 - Dec 2019</div>
+                        </div>
+                        <div class="job-description">
+                            Taught IT and programming courses. Developed curriculum and training materials for IT students.
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="works" class="works">
+        <section id="portfolio" class="portfolio-pages">
+            <div class="container">
+                <h2 class="section-title">Portfolio Projects</h2>
+                <p class="text-center" style="margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    A collection of my completed projects showcasing expertise in web development, mobile applications, and integrated systems.
+                </p>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <span class="project-type">University Website</span>
+                        <h3>UPMin - DMPCS</h3>
+                        <p>University website development for University of the Philippines Mindanao - Department of Mathematics, Physics, and Computer Science.</p>
+                        <div class="portfolio-tech">
+                            <span>Laravel</span> <span>Bootstrap</span> <span>MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <span class="project-type">E-commerce Website</span>
+                        <h3>Bousticare</h3>
+                        <p>E-commerce platform for beauty and skincare products with shopping cart, payment integration, and admin dashboard.</p>
+                        <div class="portfolio-tech">
+                            <span>PHP</span> <span>JavaScript</span> <span>MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <span class="project-type">Jewelry Store</span>
+                        <h3>Bermudez Jewels</h3>
+                        <p>Online jewelry store with product catalog, customer reviews, and secure payment processing.</p>
+                        <div class="portfolio-tech">
+                            <span>WordPress</span> <span>WooCommerce</span> <span>PHP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <span class="project-type">Mobile App</span>
+                        <h3>NIMOS Meter Reader App</h3>
+                        <p>Android application for recording water meter readings with API synchronization to NIMOS server. Built with Flutter for cross-platform compatibility.</p>
+                        <div class="portfolio-tech">
+                            <span>Flutter</span> <span>Dart</span> <span>REST API</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <span class="project-type">Integrated System</span>
+                        <h3>TL Mabuhay BOMS</h3>
+                        <p>Enterprise Resource Planning system for driving school operations with HRIS, accounting, document tracking, and vehicle management modules.</p>
+                        <div class="portfolio-tech">
+                            <span>Laravel</span> <span>VueJS</span> <span>MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <span class="project-type">HR System</span>
+                        <h3>iMC3 Integrated HR System</h3>
+                        <p>Comprehensive HR management system with leave management, DTR, payroll, travel orders, and employee management features.</p>
+                        <div class="portfolio-tech">
+                            <span>PHP</span> <span>JavaScript</span> <span>MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <span class="project-type">Utility Tool</span>
+                        <h3>QR Code Generation Tool</h3>
+                        <p>Custom QR code generation system for ID systems, event management, and product tracking with mobile and web-based platforms.</p>
+                        <div class="portfolio-tech">
+                            <span>JavaScript</span> <span>PHP</span> <span>API</span>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <span class="project-type">Event System</span>
+                        <h3>Activity Event Management System</h3>
+                        <p>Comprehensive platform for planning, organizing, and executing events with participant management, scheduling, and reporting capabilities.</p>
+                        <div class="portfolio-tech">
+                            <span>PHP</span> <span>Bootstrap</span> <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="works">
             <div class="container">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="projects-grid">
@@ -1019,87 +1296,119 @@
                         </div>
                         <div class="project-content">
                             <h3>NIMOS</h3>
-                            <p>NEBAWASCO Integrated Management Operation System with modules for water billing, accounting, HRIS, and inventory management. Built with Laravel and MySQL.</p>
+                            <p>NEBAWASCO Integrated Management Operation System with modules for water billing, accounting, HRIS, cashiering, and customer management.</p>
                             <div class="project-tech">
                                 <span>Laravel</span> • <span>MySQL</span> • <span>JavaScript</span>
                             </div>
+                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
+                    
                     <article class="project-card">
                         <div class="project-image">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
                         <div class="project-content">
-                            <h3>Event Management System</h3>
-                            <p>Software platform for planning, organizing, and executing events with participant management, scheduling, and comprehensive reporting capabilities.</p>
+                            <h3>Activity Event Management System</h3>
+                            <p>Comprehensive platform for planning, organizing, and executing events with participant management, scheduling, and reporting capabilities.</p>
                             <div class="project-tech">
                                 <span>PHP</span> • <span>Bootstrap</span> • <span>MySQL</span>
                             </div>
+                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
+                    
                     <article class="project-card">
                         <div class="project-image">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fas fa-qrcode"></i>
                         </div>
                         <div class="project-content">
-                            <h3>E-Commerce Platform</h3>
-                            <p>Full-featured online shopping platform with payment integration, inventory management, and admin dashboard for small to medium businesses.</p>
+                            <h3>QR Code Generation Tool</h3>
+                            <p>Custom QR code generation system for ID systems, event management, and product tracking with mobile and web-based platforms.</p>
                             <div class="project-tech">
-                                <span>Vue.js</span> • <span>Laravel</span> • <span>Stripe API</span>
+                                <span>JavaScript</span> • <span>PHP</span> • <span>API</span>
                             </div>
+                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
+                    
                     <article class="project-card">
                         <div class="project-image">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <div class="project-content">
-                            <h3>Mobile Task Manager</h3>
-                            <p>Cross-platform mobile application for task management and team collaboration, built with Flutter and Firebase backend integration.</p>
+                            <h3>NIMOS Mobile App</h3>
+                            <p>Cross-platform mobile application for field operations with meter reading, data synchronization, and offline capabilities.</p>
                             <div class="project-tech">
-                                <span>Flutter</span> • <span>Firebase</span> • <span>Dart</span>
+                                <span>Flutter</span> • <span>Dart</span> • <span>REST API</span>
                             </div>
+                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
+                    
                     <article class="project-card">
                         <div class="project-image">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fas fa-car"></i>
                         </div>
                         <div class="project-content">
-                            <h3>Analytics Dashboard</h3>
-                            <p>Real-time analytics dashboard for business intelligence with interactive charts, data visualization, and automated reporting features.</p>
+                            <h3>TL Mabuhay BOMS</h3>
+                            <p>Business Operations Management System for driving school with HRIS, accounting, vehicle management, and student tracking modules.</p>
                             <div class="project-tech">
-                                <span>React</span> • <span>Node.js</span> • <span>MongoDB</span>
+                                <span>Laravel</span> • <span>VueJS</span> • <span>MySQL</span>
                             </div>
+                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
+                    
                     <article class="project-card">
                         <div class="project-image">
-                            <i class="fas fa-graduation-cap"></i>
+                            <i class="fas fa-users"></i>
                         </div>
                         <div class="project-content">
-                            <h3>Learning Management System</h3>
-                            <p>Educational platform with course management, student tracking, assessment tools, and interactive learning modules for online education.</p>
+                            <h3>iMC3 HR System</h3>
+                            <p>Integrated Human Resource Management System with leave management, payroll, travel orders, and employee self-service portal.</p>
                             <div class="project-tech">
-                                <span>Laravel</span> • <span>Vue.js</span> • <span>PostgreSQL</span>
+                                <span>PHP</span> • <span>JavaScript</span> • <span>MySQL</span>
                             </div>
+                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </article>
+                </div>
+                
+                <div class="text-center" style="margin-top: 3rem;">
+                    <a href="#portfolio" class="btn btn-outline">View All Portfolio Items</a>
                 </div>
             </div>
         </section>
 
         <section class="testimonials">
             <div class="container">
-                <h2 class="section-title">What Colleagues Say</h2>
+                <h2 class="section-title">References</h2>
                 <div class="testimonial-slider">
                     <div class="testimonial">
                         <div class="testimonial-content">
-                            <p>"Jason's expertise in Laravel transformed our workflow. His attention to detail and problem-solving skills are exceptional. He consistently delivers high-quality solutions on time."</p>
+                            <p>"Jason's expertise in system development and mobile applications significantly improved our operational efficiency at NEBAWASCO. His attention to detail and problem-solving skills are exceptional."</p>
                         </div>
                         <div class="testimonial-author">
-                            <p><strong>NEBAWASCO</strong></p>
+                            <p><strong>NEBAWASCO Management</strong></p>
                         </div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="portfolio-item">
+                        <h3>Raymart N Itanong</h3>
+                        <p><strong>Computer Programmer II</strong></p>
+                        <p>PLGU - Davao de Oro</p>
+                        <p><i class="fas fa-phone"></i> 0938 319 8777</p>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <h3>Joselle Kris Pendon</h3>
+                        <p><strong>Virtual Assistant</strong></p>
+                        <p>Outsource Doers</p>
+                        <p><i class="fas fa-envelope"></i> josellependox@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> 0946 661 7973</p>
                     </div>
                 </div>
             </div>
@@ -1112,15 +1421,17 @@
                     <div class="contact-info">
                         <h3>Contact Information</h3>
                         <ul>
+                            <li><i class="fas fa-envelope"></i> json7649@gmail.com</li>
                             <li><i class="fas fa-envelope"></i> jsceon@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +63 976 389 4253</li>
                             <li><i class="fas fa-phone"></i> +63 909 671 6850</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Nabunturan, Davao de Oro, Davao Region, Philippines</li>
+                            <li><i class="fas fa-map-marker-alt"></i> P-2 Bayubay Compostela, Davao De Oro Philippines, 8803</li>
                         </ul>
                         <div class="social-links">
                             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" aria-label="Phone"><i class="fas fa-phone"></i></a>
                         </div>
                     </div>
                     <form class="contact-form">
@@ -1155,24 +1466,24 @@
                         <span class="logo-icon">JO</span>
                         <h3>Jason Omac</h3>
                     </div>
-                    <p>Web & Systems Developer specializing in creating efficient, user-friendly digital solutions that drive business success.</p>
+                    <p>Web & Mobile Systems Developer specializing in Laravel, Flutter, and full-stack development. Creating efficient, user-friendly digital solutions.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#works">Projects</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-tech">
-                    <h4>Technologies</h4>
+                    <h4>Core Technologies</h4>
                     <ul>
-                        <li>Laravel</li>
-                        <li>Flutter</li>
-                        <li>Vue/React</li>
-                        <li>SQL/NoSQL</li>
+                        <li>Laravel / PHP</li>
+                        <li>Flutter / Dart</li>
+                        <li>VueJS / ReactJS</li>
+                        <li>MySQL / SQLite</li>
                     </ul>
                 </div>
             </div>
@@ -1305,7 +1616,7 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.tech-card, .project-card, .experience-item, .education-item').forEach(el => {
+        document.querySelectorAll('.tech-card, .project-card, .experience-item, .education-item, .portfolio-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
