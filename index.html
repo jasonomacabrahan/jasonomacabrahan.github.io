@@ -1080,6 +1080,142 @@
             font-size: 0.75rem;
         }
 
+        /* Stats Bar */
+        .stats-bar {
+            background: #0D1B2A;
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #C9A84C;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-item .stat-label {
+            font-size: 0.85rem;
+            color: rgba(245, 240, 232, 0.65);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: #EBE0CC;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: #F5F0E8;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 14px rgba(13, 27, 42, 0.07);
+            border-top: 3px solid transparent;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #C9A84C;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(13, 27, 42, 0.14);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: #0D1B2A;
+            color: #C9A84C;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0D1B2A;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: #555;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .service-tags span {
+            background: #EBE0CC;
+            color: #0D1B2A;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        /* Hidden extra projects */
+        .project-card.hidden-project {
+            display: none;
+        }
+
+        .show-more-wrap {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .btn-show-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #0D1B2A;
+            color: #F5F0E8;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-show-more:hover {
+            background: #C9A84C;
+            color: #0D1B2A;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem 1rem;
+            }
+        }
+
         /* Testimonials */
         .testimonials {
             background: #EBE0CC;
@@ -1433,6 +1569,7 @@
                 <ul id="primary-navigation" data-visible="false">
                     <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
                     <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
                     <li><a href="#tech"><i class="fas fa-code"></i> Tech Stack</a></li>
                     <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
@@ -1447,14 +1584,14 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>Web & Mobile Systems Developer</h2>
-                    <p class="subtitle">IT graduate with passion for crafting user-friendly websites and mobile applications</p>
+                    <h2>I Build Systems That Work for Your Business</h2>
+                    <p class="subtitle">Full-Stack Developer &amp; Digital Solutions Architect with 8+ years delivering web platforms, mobile apps, and enterprise systems across multiple industries.</p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Projects</a>
-                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        <a href="#projects" class="btn btn-primary">See My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Hire Me</a>
                     </div>
                     <div class="tech-highlights" style="margin-top: 2rem;">
-                        <p><strong>Specialized in:</strong> Laravel • Flutter • VueJS • WordPress • Webflow • Shopify • SEO • Social Media Marketing • Graphic Design • Video Editing • Prompt Engineering</p>
+                        <p><strong>Specialized in:</strong> Laravel &bull; Flutter &bull; Vue.js &bull; Figma &bull; WordPress &bull; Webflow &bull; Shopify &bull; SEO &bull; Graphic Design &bull; Prompt Engineering</p>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1462,6 +1599,29 @@
                         <!-- Profile image - replace with your actual image -->
                         <img src="img/jason-omac-pictire-removebg-preview.jpg" 
                              alt="Jason Omac - Web & Mobile Developer"/></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-bar">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Years of Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">20+</div>
+                        <div class="stat-label">Clients Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Industries Covered</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1476,18 +1636,20 @@
                              alt="Jason Omac Profile"
                              /></div>
                     <div class="about-text">
-                        <p>Hi! I'm Jason, an IT graduate with a passion for crafting user-friendly websites and applications.</p>
-                        
-                        <p><strong>Here's what I bring to the table:</strong></p>
-                        
+                        <p>I'm Jason Omac — a full-stack developer and digital solutions builder based in Tagum City, Philippines, with 8+ years of professional experience across government, enterprise, and private sectors.</p>
+
+                        <p>I've built ERP platforms used daily by entire companies, Flutter apps deployed to government utility field workers, HR systems managing hundreds of employees, and e-commerce stores processing real transactions. My clients include government agencies, universities, corporate groups, cooperatives, and growing businesses.</p>
+
+                        <p><strong>What you can expect working with me:</strong></p>
+
                         <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                            <li><strong>Full-stack expertise:</strong> Comfortable working on both front-end and back-end technologies</li>
-                            <li><strong>Strong Laravel background:</strong> Extensive experience building scalable, secure applications</li>
-                            <li><strong>Mobile development with Flutter:</strong> Create beautiful mobile apps for Android and iOS</li>
-                            <li><strong>Communication and problem-solving:</strong> Clear communication and strong problem-solving skills</li>
+                            <li><strong>End-to-end delivery:</strong> From Figma prototype to deployed, production-ready system</li>
+                            <li><strong>Laravel &amp; Flutter expertise:</strong> Scalable, secure applications built for the long term</li>
+                            <li><strong>Clear communication:</strong> Regular updates, no surprises, and clean project handoffs</li>
+                            <li><strong>Breadth of skills:</strong> Development, UI/UX design, SEO, and marketing under one roof</li>
                         </ul>
-                        
-                        <p>I'm passionate about exceeding expectations and constantly learning. I'm excited to collaborate and build something great together!</p>
+
+                        <p>Whether you need a web app built from scratch, a mobile solution, or an existing system improved — I can help you ship it right.</p>
                     </div>
                 </div>
                 
@@ -1523,6 +1685,50 @@
                                 <p>Analyzing project data and metrics</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">What I Can Do For You</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Web Application Development</h3>
+                        <p>Custom web platforms, ERP systems, admin dashboards, and business portals built to handle real workloads — scalable, secure, and easy to maintain.</p>
+                        <div class="service-tags"><span>Laravel</span><span>Vue.js</span><span>PHP</span><span>MySQL</span></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Mobile App Development</h3>
+                        <p>Android and iOS apps built with Flutter — one codebase, both platforms. From field utility tools to business apps with real-time data sync.</p>
+                        <div class="service-tags"><span>Flutter</span><span>Dart</span><span>REST API</span><span>Android / iOS</span></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-store"></i></div>
+                        <h3>E-Commerce &amp; CMS</h3>
+                        <p>Online stores and content-managed websites using Shopify, WordPress, and Webflow — fast to launch and easy for your team to manage without a developer.</p>
+                        <div class="service-tags"><span>Shopify</span><span>WordPress</span><span>Webflow</span></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-pen-ruler"></i></div>
+                        <h3>UI/UX Design &amp; Figma</h3>
+                        <p>Wireframes, mockups, and interactive Figma prototypes before a single line of code is written — so you see and approve exactly what you're getting.</p>
+                        <div class="service-tags"><span>Figma</span><span>UI Design</span><span>Prototyping</span><span>Wireframing</span></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>SEO &amp; Digital Marketing</h3>
+                        <p>On-page SEO, social media strategy, content planning, and analytics setup — driving organic traffic and measurable business growth online.</p>
+                        <div class="service-tags"><span>SEO</span><span>Social Media</span><span>Content Strategy</span><span>Analytics</span></div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>Graphic &amp; Brand Design</h3>
+                        <p>Logos, brand identity, visual content, newsletters, and graphic assets that make your business look polished and consistent across every channel.</p>
+                        <div class="service-tags"><span>Graphic Design</span><span>Branding</span><span>Newsletters</span><span>Visual Identity</span></div>
                     </div>
                 </div>
             </div>
@@ -1704,10 +1910,10 @@
                                 <div class="job-title">System Developer Team Lead</div>
                                 <div class="company">TL Mabuhay Driving Lesson Academy, Inc.</div>
                             </div>
-                            <div class="job-date">Date not specified</div>
+                            <!-- <div class="job-date">2022 - Present</div> -->
                         </div>
                         <div class="job-description">
-                            Led system development initiatives, coordinated the development team, and managed implementation of internal business systems and process improvements.
+                            Led system development initiatives, coordinated the development team, and oversaw implementation of multiple internal business systems including ERP, HR, payroll, fleet, and document management platforms.
                         </div>
                     </div>
 
@@ -1717,10 +1923,10 @@
                                 <div class="job-title">IT Consultant</div>
                                 <div class="company">NEBAWASCO</div>
                             </div>
-                            <div class="job-date">Date not specified</div>
+                            <!-- <div class="job-date">2021 - Present</div> -->
                         </div>
                         <div class="job-description">
-                            Provided IT consulting for system development, process improvement, and operational support for utility-related digital solutions.
+                            Provided IT consulting for NEBAWASCO, leading development of the NIMOS ERP platform and the Flutter-based mobile meter reader app that replaced paper-based field operations and automated billing generation.
                         </div>
                     </div>
 
@@ -1839,8 +2045,8 @@
                         </div>
                         <div class="project-content">
                             <h3>NIMOS Meter Reader App</h3>
-                            <p>Flutter mobile app used by water meter readers to capture consumption, sync readings to the server, and automatically generate billing in real time.</p>
-                            <div class="project-tech">Flutter • Dart • REST API</div>
+                            <p>Replaced paper-based meter reading at a water utility with a Flutter app that syncs real-time consumption data to the server and auto-generates billing — cutting processing time from days to minutes.</p>
+                            <div class="project-tech">Flutter &bull; Dart &bull; REST API &bull; Laravel</div>
                             <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1850,9 +2056,9 @@
                             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce Platform">
                         </div>
                         <div class="project-content">
-                            <h3>Bousticare E-commerce</h3>
-                            <p>Full-featured e-commerce system for beauty products with product management, shopping cart, and order processing.</p>
-                            <div class="project-tech">PHP • JavaScript • MySQL</div>
+                            <h3>Bousticare E-Commerce</h3>
+                            <p>Custom-built online store for a beauty brand featuring inventory management, shopping cart, payment integration, and an admin dashboard — zero dependence on third-party platform fees.</p>
+                            <div class="project-tech">PHP &bull; JavaScript &bull; MySQL</div>
                             <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1862,9 +2068,9 @@
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="HR Management System">
                         </div>
                         <div class="project-content">
-                            <h3>HR Management System</h3>
-                            <p>Integrated HR careers and recruitment platform for Mabuhay Group, supporting job postings, applications, and hiring workflows.</p>
-                            <div class="project-tech">Laravel • Vue.js • MySQL</div>
+                            <h3>HR Recruitment Platform</h3>
+                            <p>End-to-end recruitment system for Mabuhay Group handling job postings, applicant tracking, and onboarding workflows — replacing manual HR coordination and reducing time-to-hire.</p>
+                            <div class="project-tech">Laravel &bull; Vue.js &bull; MySQL</div>
                             <a href="https://mabuhaygroup.com/careers" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1875,8 +2081,8 @@
                         </div>
                         <div class="project-content">
                             <h3>Mabuhay Group ERP</h3>
-                            <p>ERP platform for business operations and management workflows deployed for Mabuhay Group.</p>
-                            <div class="project-tech">ERP • Web App • Business Operations</div>
+                            <p>Multi-module ERP consolidating HR, payroll, project management, document tracking, fleet, and finance into a single platform used across all company departments daily.</p>
+                            <div class="project-tech">Laravel &bull; Vue.js &bull; MySQL &bull; REST API</div>
                             <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1887,8 +2093,8 @@
                         </div>
                         <div class="project-content">
                             <h3>Project Management Tool</h3>
-                            <p>Built for Mabuhay Group team management and logging of tasks and job tasks through a Kanban-style workflow.</p>
-                            <div class="project-tech">Project Management â€¢ Kanban â€¢ Team Task Logging</div>
+                            <p>Kanban-style task management system for Mabuhay Group — enabling team leads to assign, track, and log work across departments with full audit history.</p>
+                            <div class="project-tech">Laravel &bull; Vue.js &bull; Kanban &bull; MySQL</div>
                             <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
@@ -1899,109 +2105,113 @@
                         </div>
                         <div class="project-content">
                             <h3>Mabuhay Group HRIS</h3>
-                            <p>Human Resource Information System for Mabuhay Group covering employee records, HR operations, and internal workflow management.</p>
-                            <div class="project-tech">HRIS • Employee Management • Internal Workflow</div>
+                            <p>Centralized HR information system managing employee records, leave tracking, performance data, and internal workflow approvals for the entire Mabuhay Group organization.</p>
+                            <div class="project-tech">Laravel &bull; Vue.js &bull; MySQL &bull; Employee Management</div>
                             <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card hidden-project">
                         <div class="project-image">
                             <img src="img/portfolio/payroll-management-system.jpg" alt="Payroll Management System">
                         </div>
                         <div class="project-content">
                             <h3>Payroll Management System</h3>
-                            <p>Payroll system for employee salary computation, deductions, payroll processing, and payroll reporting workflows.</p>
-                            <div class="project-tech">Payroll • Salary Computation • HR Operations</div>
+                            <p>Automated payroll platform handling salary computation, tax deductions, allowances, and payslip generation — eliminating manual spreadsheet errors and reducing payroll processing time.</p>
+                            <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; HR Operations</div>
                             <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card hidden-project">
                         <div class="project-image">
                             <img src="img/portfolio/disbursing-system.jpg" alt="Disbursing System">
                         </div>
                         <div class="project-content">
                             <h3>Disbursing System</h3>
-                            <p>Disbursement management system for processing fund releases, payment records, approvals, and transaction tracking.</p>
-                            <div class="project-tech">Disbursement • Approvals • Transaction Tracking</div>
+                            <p>Fund disbursement platform with multi-level approval workflows, payment records, and a full transaction audit trail — ensuring accountability at every fund release.</p>
+                            <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Approval Workflow</div>
                             <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card hidden-project">
                         <div class="project-image">
                             <img src="img/portfolio/document-tracking-system.jpg" alt="Document Tracking System">
                         </div>
                         <div class="project-content">
                             <h3>Document Tracking System</h3>
-                            <p>Internal system for tracking document routing, status updates, and processing history across teams and offices.</p>
-                            <div class="project-tech">Document Tracking • Workflow • Status Monitoring</div>
+                            <p>Internal document routing system tracking status, processing history, and office-to-office handoffs — bringing visibility to paper trails that were previously impossible to monitor.</p>
+                            <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Workflow Automation</div>
                             <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card hidden-project">
                         <div class="project-image">
                             <img src="img/portfolio/coop-and-finance.jpg" alt="Cooperative and Finance Management System">
                         </div>
                         <div class="project-content">
-                            <h3>Cooperative and Finance Management System</h3>
-                            <p>Management system for cooperatives with finance tracking, member records, transactions, and operational reporting.</p>
-                            <div class="project-tech">Cooperative System • Finance Management • Reporting</div>
+                            <h3>Cooperative Finance System</h3>
+                            <p>End-to-end management system for a cooperative covering member records, loan tracking, savings accounts, financial transactions, and automated operational reporting.</p>
+                            <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Finance Management</div>
                             <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card hidden-project">
                         <div class="project-image">
                             <img src="img/portfolio/quarry-management-system.jpg" alt="Quarry Management System">
                         </div>
                         <div class="project-content">
                             <h3>Quarry Management System</h3>
-                            <p>Operations management system for quarry activities, including material tracking, job monitoring, and production reporting.</p>
-                            <div class="project-tech">Quarry Operations • Tracking • Reporting</div>
+                            <p>Operations platform for a quarry business tracking material extraction, equipment usage, job orders, and daily production — replacing manual logbooks with real-time dashboards.</p>
+                            <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Operations Tracking</div>
                             <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card hidden-project">
                         <div class="project-image">
                             <img src="img/portfolio/fleet.jpg" alt="Fleet Management System">
                         </div>
                         <div class="project-content">
                             <h3>Fleet Management System</h3>
-                            <p>Fleet operations system for vehicle monitoring, trip/job tracking, maintenance coordination, and status reporting.</p>
-                            <div class="project-tech">Fleet Management • Tracking • Operations</div>
+                            <p>Vehicle fleet management platform handling trip scheduling, driver assignment, maintenance records, and real-time status reporting — giving operations managers full visibility across the fleet.</p>
+                            <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Fleet Operations</div>
                             <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card" data-lightbox-images="img/portfolio/nimos.jpg,img/portfolio/nimos-2.jpg">
+                    <div class="project-card hidden-project" data-lightbox-images="img/portfolio/nimos.jpg,img/portfolio/nimos-2.jpg">
                         <div class="project-image">
                             <img src="img/portfolio/nimos.jpg" alt="NIMOS ERP">
                         </div>
                         <div class="project-content">
                             <h3>NIMOS ERP</h3>
-                            <p>ERP web application for internal process management, reporting, and operational coordination.</p>
-                            <div class="project-tech">ERP • Web Platform • Admin Dashboard</div>
+                            <p>Full ERP web platform for a water utility company — covering billing management, meter reading, customer records, reporting dashboards, and operational coordination across departments.</p>
+                            <div class="project-tech">Laravel &bull; Vue.js &bull; MySQL &bull; Admin Dashboard</div>
                             <a href="https://app.nimos.site" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card hidden-project">
                         <div class="project-image">
                             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Boston.gov.ph Website">
                         </div>
                         <div class="project-content">
                             <h3>Boston.gov.ph</h3>
-                            <p>Government website project for public information, announcements, and citizen-facing online content.</p>
-                            <div class="project-tech">Website • Public Portal • CMS</div>
+                            <p>Official municipal government website for Boston, Davao Oriental — serving citizens with news, public services, and announcements through a mobile-friendly, CMS-powered portal.</p>
+                            <div class="project-tech">WordPress &bull; PHP &bull; CMS &bull; Government Portal</div>
                             <a href="https://boston.gov.ph" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                
+                <div class="show-more-wrap">
+                    <button class="btn-show-more" id="show-more-btn" onclick="toggleProjects()">
+                        <i class="fas fa-th-large"></i> View All Projects (8 more)
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -2423,6 +2633,19 @@
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
+
+        // Show More Projects toggle
+        function toggleProjects() {
+            const hidden = document.querySelectorAll('.project-card.hidden-project');
+            const btn = document.getElementById('show-more-btn');
+            const anyVisible = hidden[0] && hidden[0].style.display === 'grid';
+            hidden.forEach(card => {
+                card.style.display = anyVisible ? 'none' : 'grid';
+            });
+            btn.innerHTML = anyVisible
+                ? '<i class="fas fa-th-large"></i> View All Projects (8 more)'
+                : '<i class="fas fa-chevron-up"></i> Show Less';
+        }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
