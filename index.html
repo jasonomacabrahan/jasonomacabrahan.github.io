@@ -872,6 +872,68 @@
             transform: scale(1.05);
         }
 
+        .project-brand {
+            position: relative;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            gap: 0.65rem;
+            padding: 1.35rem;
+            text-align: left;
+        }
+
+        .project-brand::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top right, rgba(255, 255, 255, 0.22), transparent 32%),
+                linear-gradient(180deg, rgba(13, 27, 42, 0.08) 0%, rgba(13, 27, 42, 0.72) 100%);
+        }
+
+        .project-brand > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-brand .brand-kicker {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-brand h4 {
+            margin: 0;
+            font-size: 1.55rem;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        .project-brand p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .skinpretty-brand {
+            background:
+                linear-gradient(135deg, #ff8aa1 0%, #7a2847 55%, #241124 100%);
+        }
+
+        .taskly-brand {
+            background:
+                linear-gradient(135deg, #3bc9ff 0%, #2563eb 52%, #10213e 100%);
+        }
+
         /* Project image slider */
         .project-slider {
             position: relative;
@@ -2048,6 +2110,34 @@
                             <p>Replaced paper-based meter reading at a water utility with a Flutter app that syncs real-time consumption data to the server and auto-generates billing — cutting processing time from days to minutes.</p>
                             <div class="project-tech">Flutter &bull; Dart &bull; REST API &bull; Laravel</div>
                             <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image project-brand skinpretty-brand" aria-label="Skin Pretty Shapewear">
+                            <span class="brand-kicker">Shopify Store</span>
+                            <h4>Skin Pretty<br>Shapewear</h4>
+                            <p>Chicago, Illinois</p>
+                        </div>
+                        <div class="project-content">
+                            <h3>Skin Pretty Shapewear</h3>
+                            <p>Shopify-based ecommerce website for a shapewear brand in Chicago, Illinois, featuring collection browsing, consultations, account flows, and a polished shopping experience built for conversion.</p>
+                            <div class="project-tech">Shopify &bull; Ecommerce &bull; Theme Customization &bull; UX</div>
+                            <a href="https://skinprettyshapewear.com/" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image project-brand taskly-brand" aria-label="Taskly task management software">
+                            <span class="brand-kicker">Flutter App</span>
+                            <h4>Taskly</h4>
+                            <p>Task management software</p>
+                        </div>
+                        <div class="project-content">
+                            <h3>Taskly</h3>
+                            <p>Task management software built with Flutter, designed to help teams organize work, manage priorities, and stay on top of daily execution through a clean cross-platform workflow.</p>
+                            <div class="project-tech">Flutter &bull; Dart &bull; Task Management &bull; Cross-Platform</div>
+                            <a href="https://taskly-ad3e1.web.app/#/login" class="project-link" target="_blank" rel="noopener noreferrer">Visit Project <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     
