@@ -1683,7 +1683,26 @@
             }
 
             #print-resume .r-head-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
                 padding: 0;
+            }
+
+            #print-resume .r-head-text {
+                flex: 1 1 auto;
+                min-width: 0;
+            }
+
+            #print-resume .r-photo {
+                flex: 0 0 auto;
+                width: 92px;
+                height: 92px;
+                object-fit: cover;
+                object-position: center 30%;
+                border-radius: 50%;
+                border: 1px solid #cfcfcf;
             }
 
             #print-resume .r-head h1 {
@@ -2614,14 +2633,17 @@
     <div id="print-resume" aria-hidden="true">
         <header class="r-head">
             <div class="r-head-inner">
-                <h1>Jason Omac</h1>
-                <p class="r-title">Full-Stack Developer &amp; Digital Solutions Architect</p>
-                <p class="r-contact">
-                    <span class="r-ci"><i class="fas fa-map-marker-alt"></i> Tagum City, Davao del Norte, PH</span>
-                    <span class="r-ci"><i class="fas fa-envelope"></i> json7649@gmail.com</span>
-                    <span class="r-ci"><i class="fas fa-phone"></i> +63 976 389 4253</span>
-                    <span class="r-ci"><i class="fab fa-linkedin"></i> linkedin.com/in/jason-omac-6b1983164</span>
-                </p>
+                <div class="r-head-text">
+                    <h1>Jason Omac</h1>
+                    <p class="r-title">Full-Stack Developer &amp; Digital Solutions Architect</p>
+                    <p class="r-contact">
+                        <span class="r-ci"><i class="fas fa-map-marker-alt"></i> Tagum City, Davao del Norte, PH</span>
+                        <span class="r-ci"><i class="fas fa-envelope"></i> json7649@gmail.com</span>
+                        <span class="r-ci"><i class="fas fa-phone"></i> +63 976 389 4253</span>
+                        <span class="r-ci"><i class="fab fa-linkedin"></i> linkedin.com/in/jason-omac-6b1983164</span>
+                    </p>
+                </div>
+                <img class="r-photo" src="img/jason-omac-pictire-removebg-preview.jpg" alt="Jason Omac">
             </div>
         </header>
 
