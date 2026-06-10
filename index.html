@@ -1640,12 +1640,7 @@
 
         @media print {
             @page {
-                margin: 12mm 0;
-            }
-
-            /* Full-bleed navy header band on the first page */
-            @page :first {
-                margin: 0 0 12mm;
+                margin: 14mm;
             }
 
             html,
@@ -1663,16 +1658,9 @@
             #print-resume {
                 display: block !important;
                 font-family: 'Poppins', Arial, sans-serif;
-                color: #2b2b2b;
+                color: #444;
                 line-height: 1.45;
                 font-size: 10.5pt;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            #print-resume * {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
             }
 
             /* Neutralise the live site's global section/header padding */
@@ -1687,89 +1675,75 @@
                 margin: 0;
             }
 
-            /* ---- Header band ---- */
+            /* ---- Header (plain) ---- */
             #print-resume .r-head {
-                background: #0D1B2A;
-                color: #F5F0E8;
-                padding: 30px 0 26px;
-                margin-bottom: 22px;
-                border-bottom: 3px solid #C9A84C;
+                padding-bottom: 12px;
+                margin-bottom: 18px;
+                border-bottom: 1px solid #222;
             }
 
             #print-resume .r-head-inner {
-                padding: 0 16mm;
+                padding: 0;
             }
 
             #print-resume .r-head h1 {
-                font-size: 27pt;
+                font-size: 24pt;
                 font-weight: 700;
-                color: #ffffff;
-                letter-spacing: 1px;
+                color: #111;
+                letter-spacing: 0.5px;
                 margin: 0;
                 line-height: 1.1;
             }
 
             #print-resume .r-title {
                 font-size: 11.5pt;
-                color: #C9A84C;
-                font-weight: 600;
-                letter-spacing: 0.6px;
-                margin: 5px 0 14px;
+                color: #444;
+                font-weight: 500;
+                margin: 4px 0 10px;
             }
 
             #print-resume .r-contact {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px 20px;
-                font-size: 8.7pt;
-                color: #d6cfc0;
+                font-size: 8.8pt;
+                color: #555;
                 margin: 0;
             }
 
             #print-resume .r-ci {
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
+                white-space: nowrap;
             }
 
+            /* Drop the icons for a plain, undecorated look */
             #print-resume .r-ci i {
-                color: #C9A84C;
-                font-size: 8.5pt;
+                display: none;
+            }
+
+            #print-resume .r-ci:not(:last-child)::after {
+                content: "  |  ";
+                color: #bbb;
             }
 
             /* ---- Body ---- */
             #print-resume .r-body {
-                padding: 0 16mm;
+                padding: 0;
             }
 
             #print-resume .r-section {
-                margin-bottom: 16px;
+                margin-bottom: 15px;
             }
 
             #print-resume .r-section h2 {
-                position: relative;
-                font-size: 11pt;
-                color: #0D1B2A;
+                font-size: 10.5pt;
+                color: #111;
                 text-transform: uppercase;
-                letter-spacing: 2px;
-                padding-bottom: 5px;
-                margin-bottom: 11px;
-                border-bottom: 1.5px solid #e7e1d3;
-            }
-
-            #print-resume .r-section h2::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -1.5px;
-                width: 46px;
-                height: 1.5px;
-                background: #C9A84C;
+                letter-spacing: 1.5px;
+                padding-bottom: 4px;
+                margin-bottom: 9px;
+                border-bottom: 1px solid #ccc;
             }
 
             /* ---- Experience ---- */
             #print-resume .r-job {
-                margin-bottom: 11px;
+                margin-bottom: 10px;
                 page-break-inside: avoid;
             }
 
@@ -1783,28 +1757,25 @@
             #print-resume .r-job-title {
                 font-weight: 700;
                 font-size: 10.5pt;
-                color: #1a1a1a;
+                color: #111;
             }
 
             #print-resume .r-job-date {
-                font-size: 8.2pt;
-                font-weight: 600;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-                color: #9a8f74;
+                font-size: 8.5pt;
+                color: #888;
                 white-space: nowrap;
             }
 
             #print-resume .r-company {
-                color: #C9A84C;
-                font-weight: 600;
+                color: #555;
+                font-weight: 500;
                 font-size: 9.6pt;
                 margin: 1px 0 3px;
             }
 
             #print-resume .r-job p {
                 font-size: 9.4pt;
-                color: #4a4a4a;
+                color: #444;
                 margin: 0;
             }
 
@@ -1816,19 +1787,17 @@
                 gap: 12px;
                 margin-bottom: 7px;
                 font-size: 9.8pt;
-                color: #4a4a4a;
+                color: #444;
             }
 
             #print-resume .r-edu-deg {
                 font-weight: 700;
-                color: #1a1a1a;
+                color: #111;
             }
 
             #print-resume .r-edu-date {
-                color: #9a8f74;
-                font-size: 8.2pt;
-                font-weight: 600;
-                letter-spacing: 0.5px;
+                color: #888;
+                font-size: 8.5pt;
                 white-space: nowrap;
             }
 
@@ -1845,7 +1814,7 @@
                 grid-template-columns: max-content 1fr;
                 gap: 5px 16px;
                 font-size: 9.4pt;
-                color: #4a4a4a;
+                color: #444;
             }
 
             #print-resume .r-skills li {
@@ -1853,28 +1822,24 @@
             }
 
             #print-resume .r-skills li strong {
-                color: #0D1B2A;
+                color: #111;
                 font-weight: 700;
                 white-space: nowrap;
             }
 
             #print-resume .r-certs li {
                 position: relative;
-                padding-left: 16px;
+                padding-left: 14px;
                 margin-bottom: 5px;
                 font-size: 9.6pt;
-                color: #4a4a4a;
+                color: #444;
             }
 
             #print-resume .r-certs li::before {
-                content: "";
+                content: "\2013";
                 position: absolute;
                 left: 0;
-                top: 5px;
-                width: 7px;
-                height: 7px;
-                background: #C9A84C;
-                border-radius: 2px;
+                color: #888;
             }
         }
     </style>
