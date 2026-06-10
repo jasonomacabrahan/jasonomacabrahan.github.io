@@ -253,6 +253,24 @@
             border-color: #EBE0CC;
         }
 
+        .btn-resume {
+            background: #C9A84C;
+            color: #0D1B2A;
+            border: 2px solid #C9A84C;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-resume:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(201, 168, 76, 0.45);
+            background: #d8bc63;
+            border-color: #d8bc63;
+        }
+
         .btn-outline {
             background: transparent;
             color: #0D1B2A;
@@ -1614,6 +1632,155 @@
                 height: 250px;
             }
         }
+
+        /* ===== Print-only résumé ===== */
+        #print-resume {
+            display: none;
+        }
+
+        @media print {
+            @page {
+                margin: 14mm 14mm 16mm;
+            }
+
+            html,
+            body {
+                background: #fff !important;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide the entire live site, show only the résumé */
+            body > *:not(#print-resume) {
+                display: none !important;
+            }
+
+            #print-resume {
+                display: block !important;
+                font-family: 'Poppins', Arial, sans-serif;
+                color: #222;
+                line-height: 1.45;
+                font-size: 10.5pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            #print-resume .r-head {
+                text-align: center;
+                border-bottom: 2px solid #C9A84C;
+                padding-bottom: 10px;
+                margin-bottom: 16px;
+            }
+
+            #print-resume .r-head h1 {
+                font-size: 23pt;
+                color: #0D1B2A;
+                letter-spacing: 0.5px;
+                margin: 0;
+            }
+
+            #print-resume .r-title {
+                font-size: 11pt;
+                color: #C9A84C;
+                font-weight: 600;
+                margin: 4px 0 6px;
+            }
+
+            #print-resume .r-contact {
+                font-size: 8.8pt;
+                color: #555;
+                margin: 0;
+            }
+
+            #print-resume .r-sep {
+                color: #C9A84C;
+                margin: 0 4px;
+            }
+
+            #print-resume .r-section {
+                margin-bottom: 13px;
+            }
+
+            #print-resume .r-section h2 {
+                font-size: 11.5pt;
+                color: #0D1B2A;
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+                border-bottom: 1px solid #d8d2c4;
+                padding-bottom: 3px;
+                margin-bottom: 8px;
+            }
+
+            #print-resume .r-job {
+                margin-bottom: 9px;
+                page-break-inside: avoid;
+            }
+
+            #print-resume .r-job-head {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                gap: 12px;
+            }
+
+            #print-resume .r-job-title {
+                font-weight: 700;
+                font-size: 10.5pt;
+                color: #111;
+            }
+
+            #print-resume .r-job-date {
+                font-size: 8.8pt;
+                color: #666;
+                white-space: nowrap;
+            }
+
+            #print-resume .r-company {
+                font-style: italic;
+                color: #C9A84C;
+                font-size: 9.8pt;
+                margin-bottom: 2px;
+            }
+
+            #print-resume .r-job p {
+                font-size: 9.5pt;
+                color: #333;
+                margin: 0;
+            }
+
+            #print-resume .r-edu {
+                margin-bottom: 6px;
+                font-size: 9.8pt;
+            }
+
+            #print-resume .r-edu-deg {
+                font-weight: 700;
+                color: #111;
+            }
+
+            #print-resume .r-edu-date {
+                color: #666;
+                font-size: 8.8pt;
+            }
+
+            #print-resume .r-skills,
+            #print-resume .r-certs {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            #print-resume .r-skills li,
+            #print-resume .r-certs li {
+                margin-bottom: 4px;
+                font-size: 9.5pt;
+                color: #333;
+            }
+
+            #print-resume .r-skills strong {
+                color: #0D1B2A;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1651,6 +1818,7 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">See My Work</a>
                         <a href="#contact" class="btn btn-secondary">Hire Me</a>
+                        <button type="button" class="btn btn-resume" onclick="window.print()" aria-label="Download résumé as PDF"><i class="fas fa-download"></i> Download Resume</button>
                     </div>
                     <div class="tech-highlights" style="margin-top: 2rem;">
                         <p><strong>Specialized in:</strong> Laravel &bull; Flutter &bull; Vue.js &bull; Figma &bull; WordPress &bull; Webflow &bull; Shopify &bull; SEO &bull; Graphic Design &bull; Prompt Engineering</p>
@@ -2379,6 +2547,146 @@
             <button id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
             <button id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
         </div>
+    </div>
+
+    <!-- Print-only résumé (hidden on screen, shown when printing / saving as PDF) -->
+    <div id="print-resume" aria-hidden="true">
+        <header class="r-head">
+            <h1>Jason Omac</h1>
+            <p class="r-title">Full-Stack Developer &amp; Digital Solutions Architect</p>
+            <p class="r-contact">
+                Tagum City, Davao del Norte, Philippines
+                <span class="r-sep">&bull;</span> json7649@gmail.com
+                <span class="r-sep">&bull;</span> +63 976 389 4253
+                <span class="r-sep">&bull;</span> linkedin.com/in/jason-omac-6b1983164
+            </p>
+        </header>
+
+        <section class="r-section">
+            <h2>Summary</h2>
+            <p>Full-Stack Developer &amp; Digital Solutions Architect with 8+ years delivering web platforms, mobile apps, and enterprise systems across multiple industries. Specialized in Laravel, Flutter, Vue.js, Figma, WordPress, Webflow, Shopify, SEO, and graphic design.</p>
+        </section>
+
+        <section class="r-section">
+            <h2>Work Experience</h2>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">System Developer Team Lead</span>
+                </div>
+                <div class="r-company">TL Mabuhay Driving Lesson Academy, Inc.</div>
+                <p>Led system development initiatives, coordinated the development team, and oversaw implementation of multiple internal business systems including ERP, HR, payroll, fleet, and document management platforms.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">IT Consultant</span>
+                </div>
+                <div class="r-company">NEBAWASCO</div>
+                <p>Provided IT consulting for NEBAWASCO, leading development of the NIMOS ERP platform and the Flutter-based mobile meter reader app that replaced paper-based field operations and automated billing generation.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">Information System Analyst 1</span>
+                    <span class="r-job-date">Dec 2021 &ndash; June 2025</span>
+                </div>
+                <div class="r-company">DICT Region XI Regional Office</div>
+                <p>System analysis, development, and implementation of government IT systems. Provided technical support and training for the eLGU system.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">Web Designer and Developer</span>
+                    <span class="r-job-date">Dec 2018 &ndash; Present</span>
+                </div>
+                <div class="r-company">Freelance</div>
+                <p>Developed responsive websites and web applications for various clients including universities, government agencies, and private companies.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">Project Development Officer 1</span>
+                    <span class="r-job-date">July 2021 &ndash; Dec 2021</span>
+                </div>
+                <div class="r-company">DICT Region XI Regional Office</div>
+                <p>Assisted in IT project planning, implementation, and monitoring for regional development projects.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">Web Developer</span>
+                    <span class="r-job-date">July 2017 &ndash; July 2022</span>
+                </div>
+                <div class="r-company">Legacy College of Compostela</div>
+                <p>Developed and maintained web systems for the college, building institutional web applications and providing technical support for academic and administrative operations.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">Information Technology Education Instructor</span>
+                    <span class="r-job-date">June 2018 &ndash; Feb 2019</span>
+                </div>
+                <div class="r-company">Legacy College of Compostela</div>
+                <p>Taught IT-related subjects, delivering lessons on programming, computer fundamentals, and related technology disciplines.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">IT Staff</span>
+                    <span class="r-job-date">July 2017 &ndash; Feb 2019</span>
+                </div>
+                <div class="r-company">Legacy College of Compostela</div>
+                <p>Provided IT support and maintained college systems, hardware, and network infrastructure to ensure smooth day-to-day operations.</p>
+            </div>
+
+            <div class="r-job">
+                <div class="r-job-head">
+                    <span class="r-job-title">IT Specialist</span>
+                    <span class="r-job-date">Feb 2019 &ndash; June 2021</span>
+                </div>
+                <div class="r-company">Department of Environment and Natural Resources (DENR)</div>
+                <p>Handled IT operations, system maintenance, and technical support for the regional office. Assisted in the digitization of environmental records and internal workflows.</p>
+            </div>
+        </section>
+
+        <section class="r-section">
+            <h2>Education</h2>
+            <div class="r-edu">
+                <span class="r-edu-deg">Bachelor of Science in Information Technology</span> &mdash; Legacy College of Compostela
+                <span class="r-edu-date">2012 &ndash; 2017</span>
+            </div>
+            <div class="r-edu">
+                <span class="r-edu-deg">Secondary Education</span> &mdash; Maryknoll Academy of Cateel
+                <span class="r-edu-date">2008 &ndash; 2012</span>
+            </div>
+            <div class="r-edu">
+                <span class="r-edu-deg">Elementary Education</span> &mdash; Hulid Elementary School
+                <span class="r-edu-date">2002 &ndash; 2008</span>
+            </div>
+        </section>
+
+        <section class="r-section">
+            <h2>Technical Skills</h2>
+            <ul class="r-skills">
+                <li><strong>Front-End:</strong> HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, Vue.js, React, jQuery</li>
+                <li><strong>Back-End:</strong> PHP, Laravel, Java, C#, VB.NET, SQL database design, API development</li>
+                <li><strong>Mobile:</strong> Flutter (Dart), React Native, Android/iOS, cross-platform apps</li>
+                <li><strong>Database &amp; Tools:</strong> MySQL, SQLite, NoSQL, Git, VS Code, Postman, REST APIs, Laravel Sanctum</li>
+                <li><strong>CMS &amp; E-Commerce:</strong> WordPress, Webflow, Shopify</li>
+                <li><strong>Digital Marketing:</strong> SEO, social media marketing, content strategy, analytics</li>
+                <li><strong>Creative Design:</strong> Figma (UI/UX), graphic design, logo &amp; branding, video editing</li>
+                <li><strong>AI &amp; Prompt Engineering:</strong> prompt engineering, AI tool integration, AI-assisted development</li>
+            </ul>
+        </section>
+
+        <section class="r-section">
+            <h2>Certificates</h2>
+            <ul class="r-certs">
+                <li>Foundations of Cybersecurity &mdash; Google</li>
+                <li>Foundations of User Experience (UX) Design &mdash; Google</li>
+            </ul>
+        </section>
     </div>
 
     <footer class="main-footer">
