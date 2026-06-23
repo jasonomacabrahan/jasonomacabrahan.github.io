@@ -3,8 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jason Omac - Web & Mobile Systems Developer Portfolio">
-    <title>Jason Omac | Web & Mobile Systems Developer</title>
+    <title>Jason Omac — Full-Stack Developer (Laravel, Flutter, Vue.js)</title>
+    <meta name="description" content="Full-Stack Developer with 8+ years building production web platforms, ERP systems, and Flutter mobile apps using Laravel, Vue.js, and MySQL. Based in the Philippines and open to remote and on-site roles.">
+    <meta name="author" content="Jason Omac">
+    <meta name="keywords" content="Jason Omac, Full-Stack Developer, Laravel Developer, Flutter Developer, Vue.js, PHP, Web Developer Philippines, Software Engineer">
+    <link rel="canonical" href="https://jasonomacabrahan.github.io/">
+    <meta name="theme-color" content="#0D1B2A">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jasonomacabrahan.github.io/">
+    <meta property="og:title" content="Jason Omac — Full-Stack Developer (Laravel, Flutter, Vue.js)">
+    <meta property="og:description" content="8+ years building production web platforms, ERP systems, and Flutter mobile apps. Open to remote and on-site developer roles.">
+    <meta property="og:image" content="https://jasonomacabrahan.github.io/img/jason-omac-pictire-removebg-preview.jpg">
+    <meta property="og:image:alt" content="Jason Omac, Full-Stack Developer">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jason Omac — Full-Stack Developer (Laravel, Flutter, Vue.js)">
+    <meta name="twitter:description" content="8+ years building production web platforms, ERP systems, and Flutter mobile apps. Open to remote and on-site developer roles.">
+    <meta name="twitter:image" content="https://jasonomacabrahan.github.io/img/jason-omac-pictire-removebg-preview.jpg">
+
+    <!-- Favicon (inline SVG, matches the JO logo) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D1B2A'/%3E%3Ctext x='50%25' y='50%25' dy='.05em' font-family='Poppins,Arial,sans-serif' font-size='30' font-weight='600' fill='%23F5F0E8' text-anchor='middle' dominant-baseline='central'%3EJO%3C/text%3E%3C/svg%3E">
+
+    <!-- Structured data: helps search engines build a knowledge panel for your name -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jason Omac",
+      "url": "https://jasonomacabrahan.github.io/",
+      "jobTitle": "Full-Stack Developer",
+      "image": "https://jasonomacabrahan.github.io/img/jason-omac-pictire-removebg-preview.jpg",
+      "sameAs": [
+        "https://github.com/jasonomacabrahan",
+        "https://www.linkedin.com/in/jason-omac-6b1983164/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tagum City",
+        "addressRegion": "Davao del Norte",
+        "addressCountry": "PH"
+      },
+      "knowsAbout": ["Laravel", "Flutter", "Vue.js", "PHP", "Dart", "MySQL", "REST APIs", "UI/UX Design"]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -40,6 +85,38 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        /* Visually hidden, but available to screen readers */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Skip link for keyboard users */
+        .skip-link {
+            position: absolute;
+            top: -60px;
+            left: 16px;
+            z-index: 2000;
+            background: #0D1B2A;
+            color: #F5F0E8;
+            padding: 10px 18px;
+            border-radius: 0 0 8px 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: top 0.2s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         /* Header */
@@ -92,19 +169,20 @@
         .main-nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.05rem;
         }
 
         .main-nav a {
             text-decoration: none;
             color: #0D1B2A;
             font-weight: 500;
-            font-size: 0.92rem;
+            font-size: 0.86rem;
             letter-spacing: 0.2px;
             transition: color 0.3s ease;
             display: flex;
             align-items: center;
             gap: 5px;
+            white-space: nowrap;
         }
 
         .main-nav a:hover,
@@ -210,6 +288,36 @@
             margin-bottom: 2rem;
             opacity: 0.85;
             color: #EBE0CC;
+        }
+
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.15);
+            border: 1px solid rgba(201, 168, 76, 0.45);
+            color: #EBE0CC;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.25rem;
+        }
+
+        .availability-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+            animation: availPulse 2s infinite;
+        }
+
+        @keyframes availPulse {
+            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6); }
+            70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
         }
 
         .hero-buttons {
@@ -320,6 +428,120 @@
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
+        }
+
+        /* Hero photo slider (rounded card) */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            max-width: 460px;
+            aspect-ratio: 4 / 3;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #0D1B2A;
+            box-shadow: 0 18px 50px rgba(13, 27, 42, 0.45);
+            border: 3px solid rgba(235, 224, 204, 0.25);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-slides {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            opacity: 0;
+            transform: scale(1.05);
+            transition: opacity 0.8s ease, transform 7s ease-out;
+            pointer-events: none;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-slide figcaption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 34px 18px 24px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            color: #F5F0E8;
+            background: linear-gradient(to top, rgba(13, 27, 42, 0.88), rgba(13, 27, 42, 0));
+        }
+
+        .hero-slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(13, 27, 42, 0.55);
+            color: #F5F0E8;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.3s ease, background 0.3s ease, color 0.3s ease;
+            z-index: 3;
+        }
+
+        .hero-slider:hover .hero-slider-btn,
+        .hero-slider:focus-within .hero-slider-btn {
+            opacity: 1;
+        }
+
+        .hero-slider-btn:hover {
+            background: #C9A84C;
+            color: #0D1B2A;
+        }
+
+        .hero-prev { left: 10px; }
+        .hero-next { right: 10px; }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 7px;
+            z-index: 3;
+        }
+
+        .hero-dots button {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background: rgba(245, 240, 232, 0.55);
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-dots button.active {
+            background: #C9A84C;
+            transform: scale(1.35);
         }
 
         /* Section Styles */
@@ -436,6 +658,42 @@
         .gallery-caption p {
             color: #666;
             font-size: 0.85rem;
+        }
+
+        /* Field Work gallery (dark showcase band) */
+        .fieldwork-section {
+            background: #0D1B2A;
+        }
+
+        .fieldwork-section .section-title {
+            color: #F5F0E8;
+        }
+
+        .fieldwork-intro {
+            text-align: center;
+            max-width: 780px;
+            margin: -1.5rem auto 2.75rem;
+            color: rgba(245, 240, 232, 0.78);
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .fieldwork-section .gallery-item {
+            border-color: rgba(245, 240, 232, 0.1);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        .fieldwork-section .gallery-caption {
+            background: #11283f;
+            border-top: 2px solid #C9A84C;
+        }
+
+        .fieldwork-section .gallery-caption h4 {
+            color: #C9A84C;
+        }
+
+        .fieldwork-section .gallery-caption p {
+            color: rgba(245, 240, 232, 0.72);
         }
 
         /* Lightbox Modal */
@@ -1062,6 +1320,20 @@
             border-bottom-color: #C9A84C;
         }
 
+        .project-link-disabled {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #8a8276;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .project-link-disabled i {
+            font-size: 0.72rem;
+        }
+
         .text-center {
             text-align: center;
         }
@@ -1312,6 +1584,20 @@
             border-top: 4px solid #0D1B2A;
         }
 
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .testimonials-grid .testimonial {
+            max-width: none;
+            margin: 0;
+        }
+
         .testimonial-content p {
             font-size: 1.05rem;
             font-style: italic;
@@ -1320,8 +1606,48 @@
             line-height: 1.9;
         }
 
-        .testimonial-author strong {
+        .testimonial-author strong,
+        .testimonial-author .author-name {
             color: #C9A84C;
+        }
+
+        .testimonial-author .author-role {
+            display: block;
+            color: #777;
+            font-size: 0.85rem;
+            font-style: normal;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .reference-cta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            background: #F5F0E8;
+            border: 2px dashed rgba(13, 27, 42, 0.18);
+            box-shadow: none;
+        }
+
+        .reference-cta i {
+            font-size: 1.8rem;
+            color: #C9A84C;
+            margin-bottom: 0.75rem;
+        }
+
+        .reference-cta p {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .reference-cta a {
+            color: #0D1B2A;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #C9A84C;
+            padding-bottom: 1px;
         }
 
         /* Contact Section */
@@ -1864,6 +2190,7 @@
     </style>
 </head>
 <body>
+    <a href="#projects" class="skip-link">Skip to projects</a>
     <header class="main-header">
         <div class="container">
             <div class="logo">
@@ -1878,12 +2205,14 @@
                 <ul id="primary-navigation" data-visible="false">
                     <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Expertise</a></li>
                     <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-                    <li><a href="#tech"><i class="fas fa-code"></i> Tech Stack</a></li>
+                    <li><a href="#tech"><i class="fas fa-code"></i> Stack</a></li>
                     <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#fieldwork"><i class="fas fa-camera-retro"></i> Field Work</a></li>
                     <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#" onclick="window.print();return false;"><i class="fas fa-file-arrow-down"></i> Résumé</a></li>
                 </ul>
             </nav>
         </div>
@@ -1893,22 +2222,50 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h2>I Build Systems That Work for Your Business</h2>
-                    <p class="subtitle">Full-Stack Developer &amp; Digital Solutions Architect with 8+ years delivering web platforms, mobile apps, and enterprise systems across multiple industries.</p>
+                    <span class="availability-badge"><span class="availability-dot"></span> Open to new opportunities</span>
+                    <h2>Full-Stack Developer building production systems with Laravel, Flutter &amp; Vue.js</h2>
+                    <p class="subtitle">8+ years shipping ERP platforms, mobile apps, and enterprise systems used daily across government, utility, and corporate organizations. Based in the Philippines — open to remote and on-site roles.</p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">See My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Hire Me</a>
-                        <button type="button" class="btn btn-resume" onclick="window.print()" aria-label="Download résumé as PDF"><i class="fas fa-download"></i> Download Resume</button>
+                        <button type="button" class="btn btn-primary" onclick="window.print()" aria-label="Download résumé as PDF"><i class="fas fa-download"></i> Download Résumé</button>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
+                        <a href="https://github.com/jasonomacabrahan" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
                     </div>
                     <div class="tech-highlights" style="margin-top: 2rem;">
-                        <p><strong>Specialized in:</strong> Laravel &bull; Flutter &bull; Vue.js &bull; Figma &bull; WordPress &bull; Webflow &bull; Shopify &bull; SEO &bull; Graphic Design &bull; Prompt Engineering</p>
+                        <p><strong>Core stack:</strong> Laravel &bull; PHP &bull; Flutter &bull; Vue.js &bull; React &bull; MySQL &bull; REST APIs &bull; Git</p>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="circle-shape">
-                        <!-- Profile image - replace with your actual image -->
-                        <img src="img/jason-omac-pictire-removebg-preview.jpg" 
-                             alt="Jason Omac - Web & Mobile Developer"/></div>
+                    <div class="hero-slider" id="hero-slider" aria-label="Photos of Jason Omac at work">
+                        <div class="hero-slides">
+                            <figure class="hero-slide active">
+                                <img src="img/jason-omac.png" alt="Jason Omac, full-stack developer, working at a multi-monitor setup" fetchpriority="high">
+                                <figcaption>Full-stack developer at work</figcaption>
+                            </figure>
+                            <figure class="hero-slide">
+                                <img src="JASON/518021763_736755625946618_3115478061925880848_n.jpg" alt="E-LGU admin training session led at DICT Region XI" loading="lazy">
+                                <figcaption>E-LGU Admin Training · Pantukan, Davao de Oro</figcaption>
+                            </figure>
+                            <figure class="hero-slide">
+                                <img src="JASON/525090225_749347868020727_2149080750223607578_n.jpg" alt="eLGU implementation engagement with LGU Mabini" loading="lazy">
+                                <figcaption>eLGU Implementation · LGU Mabini</figcaption>
+                            </figure>
+                            <figure class="hero-slide">
+                                <img src="JASON/522494875_742860788669435_7433528135551162819_n.jpg" alt="Digital governance rollout with LGU Nabunturan" loading="lazy">
+                                <figcaption>Digital Governance · LGU Nabunturan</figcaption>
+                            </figure>
+                            <figure class="hero-slide">
+                                <img src="JASON/476031593_1060641676105107_776210437097194968_n.jpg" alt="Coordination meeting at DICT Region XI" loading="lazy">
+                                <figcaption>Coordination at DICT Region XI</figcaption>
+                            </figure>
+                            <figure class="hero-slide">
+                                <img src="JASON/539417172_775278785427635_6603728925107819813_n.jpg" alt="Working session with the DICT Region XI team" loading="lazy">
+                                <figcaption>Working session · DICT Region XI</figcaption>
+                            </figure>
+                        </div>
+                        <button class="hero-slider-btn hero-prev" type="button" aria-label="Previous photo"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                        <button class="hero-slider-btn hero-next" type="button" aria-label="Next photo"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                        <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Choose photo"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1946,20 +2303,20 @@
                              alt="Jason Omac Profile"
                              /></div>
                     <div class="about-text">
-                        <p>I'm Jason Omac — a full-stack developer and digital solutions builder based in Tagum City, Philippines, with 8+ years of professional experience across government, enterprise, and private sectors.</p>
+                        <p>I'm Jason Omac — a full-stack developer based in Tagum City, Philippines, with 8+ years of professional experience across government, enterprise, and private-sector software teams.</p>
 
-                        <p>I've built ERP platforms used daily by entire companies, Flutter apps deployed to government utility field workers, HR systems managing hundreds of employees, and e-commerce stores processing real transactions. My clients include government agencies, universities, corporate groups, cooperatives, and growing businesses.</p>
+                        <p>I've built ERP platforms used daily by entire companies, Flutter apps deployed to utility field workers, HR systems managing hundreds of employees, and e-commerce stores processing real transactions — the kind of systems that have to stay reliable in production, not just demo well.</p>
 
-                        <p><strong>What you can expect working with me:</strong></p>
+                        <p><strong>What I bring to a team:</strong></p>
 
                         <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-                            <li><strong>End-to-end delivery:</strong> From Figma prototype to deployed, production-ready system</li>
-                            <li><strong>Laravel &amp; Flutter expertise:</strong> Scalable, secure applications built for the long term</li>
-                            <li><strong>Clear communication:</strong> Regular updates, no surprises, and clean project handoffs</li>
-                            <li><strong>Breadth of skills:</strong> Development, UI/UX design, SEO, and marketing under one roof</li>
+                            <li><strong>End-to-end ownership:</strong> comfortable from database schema and API design to UI and deployment</li>
+                            <li><strong>Laravel &amp; Flutter depth:</strong> scalable, secure applications maintained over years, not weeks</li>
+                            <li><strong>Clear communication:</strong> regular updates, documented handoffs, and collaborative code reviews</li>
+                            <li><strong>Leadership experience:</strong> led a development team and coordinated delivery across multiple business systems</li>
                         </ul>
 
-                        <p>Whether you need a web app built from scratch, a mobile solution, or an existing system improved — I can help you ship it right.</p>
+                        <p>I'm currently open to full-stack, backend, or mobile developer roles — remote or on-site — where I can own meaningful features and help a team ship reliable software.</p>
                     </div>
                 </div>
                 
@@ -2002,7 +2359,7 @@
 
         <section id="services" class="services-section">
             <div class="container">
-                <h2 class="section-title">What I Can Do For You</h2>
+                <h2 class="section-title">What I Do</h2>
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
@@ -2334,6 +2691,95 @@
             </div>
         </section>
 
+        <section id="fieldwork" class="fieldwork-section">
+            <div class="container">
+                <h2 class="section-title">Field Work &amp; Government Engagements</h2>
+                <p class="fieldwork-intro">On-the-ground work as an Information System Analyst with the Department of Information and Communications Technology (DICT) Region XI — eLGU implementation, cybersecurity awareness, and digital governance rollouts with local government units across the Davao Region. Click any photo to view it full size.</p>
+                <div class="image-gallery">
+                    <div class="gallery-item" data-image="JASON/518021763_736755625946618_3115478061925880848_n.jpg" data-caption="E-LGU Admin Training &amp; System Setup — Pantukan, Davao de Oro">
+                        <img src="JASON/518021763_736755625946618_3115478061925880848_n.jpg" alt="E-LGU admin training and system setup in Pantukan, Davao de Oro" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>E-LGU Admin Training</h4><p>System setup · Pantukan, Davao de Oro</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/525090225_749347868020727_2149080750223607578_n.jpg" data-caption="eLGU Implementation — LGU Mabini, Davao de Oro">
+                        <img src="JASON/525090225_749347868020727_2149080750223607578_n.jpg" alt="eLGU implementation engagement with LGU Mabini" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>LGU Mabini</h4><p>eLGU implementation partnership</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/522494875_742860788669435_7433528135551162819_n.jpg" data-caption="Strengthening Digital Governance — LGU Nabunturan">
+                        <img src="JASON/522494875_742860788669435_7433528135551162819_n.jpg" alt="Digital governance session with LGU Nabunturan" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>LGU Nabunturan</h4><p>Digital governance rollout</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/519595530_742860695336111_1062160215113692215_n.jpg" data-caption="PNPKI, Cybersecurity Awareness &amp; eLGU — LGU Nabunturan">
+                        <img src="JASON/519595530_742860695336111_1062160215113692215_n.jpg" alt="PNPKI, cybersecurity awareness and eLGU engagement with LGU Nabunturan" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>LGU Nabunturan</h4><p>PNPKI &amp; cybersecurity awareness</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/476031593_1060641676105107_776210437097194968_n.jpg" data-caption="Coordination meeting — DICT Region XI">
+                        <img src="JASON/476031593_1060641676105107_776210437097194968_n.jpg" alt="Coordination meeting at DICT Region XI" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Coordination &amp; courtesy call</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/539417172_775278785427635_6603728925107819813_n.jpg" data-caption="Working session — DICT Region XI">
+                        <img src="JASON/539417172_775278785427635_6603728925107819813_n.jpg" alt="Working session with the DICT Region XI team" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Technical working session</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/482248476_642084695413712_7436151739196517399_n.jpg" data-caption="DICT Region XI — Digital governance field work">
+                        <img src="JASON/482248476_642084695413712_7436151739196517399_n.jpg" alt="DICT Region XI digital governance field work" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Digital governance field work</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/518069520_736755055946675_5166722003366613350_n.jpg" data-caption="DICT Region XI — eLGU rollout">
+                        <img src="JASON/518069520_736755055946675_5166722003366613350_n.jpg" alt="DICT Region XI eLGU rollout" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>eLGU rollout</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/518309760_736755749279939_1422152262463239816_n.jpg" data-caption="DICT Region XI — Technical training">
+                        <img src="JASON/518309760_736755749279939_1422152262463239816_n.jpg" alt="DICT Region XI technical training" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Technical training</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/518547988_736755449279969_1623069783809621968_n.jpg" data-caption="DICT Region XI — LGU coordination">
+                        <img src="JASON/518547988_736755449279969_1623069783809621968_n.jpg" alt="DICT Region XI LGU coordination" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>LGU coordination</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/521682708_745125321776315_3002155206170409409_n.jpg" data-caption="DICT Region XI — Cybersecurity awareness">
+                        <img src="JASON/521682708_745125321776315_3002155206170409409_n.jpg" alt="DICT Region XI cybersecurity awareness session" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Cybersecurity awareness</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/522720476_745125318442982_1935831570155212890_n.jpg" data-caption="DICT Region XI — Stakeholder engagement">
+                        <img src="JASON/522720476_745125318442982_1935831570155212890_n.jpg" alt="DICT Region XI stakeholder engagement" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Stakeholder engagement</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/523110746_742860778669436_2784550105398252864_n.jpg" data-caption="DICT Region XI — Field deployment">
+                        <img src="JASON/523110746_742860778669436_2784550105398252864_n.jpg" alt="DICT Region XI field deployment" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Field deployment</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/523175148_742860772002770_8286458202520244102_n.jpg" data-caption="DICT Region XI — Digital governance rollout">
+                        <img src="JASON/523175148_742860772002770_8286458202520244102_n.jpg" alt="DICT Region XI digital governance rollout" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Digital governance rollout</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/523506158_745123695109811_8192643914053390407_n.jpg" data-caption="DICT Region XI — eLGU implementation">
+                        <img src="JASON/523506158_745123695109811_8192643914053390407_n.jpg" alt="DICT Region XI eLGU implementation" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>eLGU implementation</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/525433274_749347688020745_9169390374380859805_n.jpg" data-caption="DICT Region XI — Program turnover">
+                        <img src="JASON/525433274_749347688020745_9169390374380859805_n.jpg" alt="DICT Region XI program turnover" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Program turnover</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/525674393_749347864687394_432693569146231427_n.jpg" data-caption="DICT Region XI — LGU coordination">
+                        <img src="JASON/525674393_749347864687394_432693569146231427_n.jpg" alt="DICT Region XI LGU coordination" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>LGU coordination</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/533516052_766316592990521_3426863690586209370_n.jpg" data-caption="DICT Region XI — Digital governance field work">
+                        <img src="JASON/533516052_766316592990521_3426863690586209370_n.jpg" alt="DICT Region XI digital governance field work" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Digital governance field work</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/539443524_775278782094302_5695086283126771569_n.jpg" data-caption="DICT Region XI — Technical training">
+                        <img src="JASON/539443524_775278782094302_5695086283126771569_n.jpg" alt="DICT Region XI technical training" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Technical training</p></div>
+                    </div>
+                    <div class="gallery-item" data-image="JASON/540212423_775278788760968_289152123069390228_n.jpg" data-caption="DICT Region XI — Field engagement">
+                        <img src="JASON/540212423_775278788760968_289152123069390228_n.jpg" alt="DICT Region XI field engagement" loading="lazy" decoding="async">
+                        <div class="gallery-caption"><h4>DICT Region XI</h4><p>Field engagement</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects-section">
             <div class="container">
                 <h2 class="section-title">Featured Projects</h2>
@@ -2357,7 +2803,7 @@
                             <h3>NIMOS Meter Reader App</h3>
                             <p>Replaced paper-based meter reading at a water utility with a Flutter app that syncs real-time consumption data to the server and auto-generates billing — cutting processing time from days to minutes.</p>
                             <div class="project-tech">Flutter &bull; Dart &bull; REST API &bull; Laravel</div>
-                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            <span class="project-link-disabled"><i class="fas fa-lock"></i> Private project — walkthrough on request</span>
                         </div>
                     </div>
 
@@ -2397,7 +2843,7 @@
                             <h3>Bousticare E-Commerce</h3>
                             <p>Custom-built online store for a beauty brand featuring inventory management, shopping cart, payment integration, and an admin dashboard — zero dependence on third-party platform fees.</p>
                             <div class="project-tech">PHP &bull; JavaScript &bull; MySQL</div>
-                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            <span class="project-link-disabled"><i class="fas fa-lock"></i> Private project — walkthrough on request</span>
                         </div>
                     </div>
                     
@@ -2493,7 +2939,7 @@
                             <h3>Cooperative Finance System</h3>
                             <p>End-to-end management system for a cooperative covering member records, loan tracking, savings accounts, financial transactions, and automated operational reporting.</p>
                             <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Finance Management</div>
-                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            <span class="project-link-disabled"><i class="fas fa-lock"></i> Private project — walkthrough on request</span>
                         </div>
                     </div>
 
@@ -2505,7 +2951,7 @@
                             <h3>Quarry Management System</h3>
                             <p>Operations platform for a quarry business tracking material extraction, equipment usage, job orders, and daily production — replacing manual logbooks with real-time dashboards.</p>
                             <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Operations Tracking</div>
-                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            <span class="project-link-disabled"><i class="fas fa-lock"></i> Private project — walkthrough on request</span>
                         </div>
                     </div>
 
@@ -2517,7 +2963,7 @@
                             <h3>Fleet Management System</h3>
                             <p>Vehicle fleet management platform handling trip scheduling, driver assignment, maintenance records, and real-time status reporting — giving operations managers full visibility across the fleet.</p>
                             <div class="project-tech">Laravel &bull; PHP &bull; MySQL &bull; Fleet Operations</div>
-                            <a href="#" class="project-link">View Details <i class="fas fa-arrow-right"></i></a>
+                            <span class="project-link-disabled"><i class="fas fa-lock"></i> Private project — walkthrough on request</span>
                         </div>
                     </div>
 
@@ -2556,12 +3002,41 @@
         <section class="testimonials">
             <div class="container">
                 <h2 class="section-title">References</h2>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"Jason's expertise in system development and mobile applications significantly improved our operational efficiency at NEBAWASCO. His attention to detail and problem-solving skills are exceptional."</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"Jason's expertise in system development and mobile applications significantly improved our operational efficiency at NEBAWASCO. His attention to detail and problem-solving skills are exceptional."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <p>
+                                <span class="author-name">NEBAWASCO Management</span>
+                                <span class="author-role">Water utility · IT consulting &amp; NIMOS ERP engagement</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="testimonial-author">
-                        <p><strong>NEBAWASCO Management</strong></p>
+
+                    <!--
+                        TO ADD A NAMED REFERENCE: copy the block below, fill in the quote,
+                        name, and title, then remove this comment. Named references with a
+                        real person + title carry far more weight with recruiters.
+
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"Their quote here."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <p>
+                                    <span class="author-name">Full Name</span>
+                                    <span class="author-role">Title, Company</span>
+                                </p>
+                            </div>
+                        </div>
+                    -->
+
+                    <div class="testimonial reference-cta">
+                        <i class="fas fa-user-check"></i>
+                        <p>Professional references from past employers and clients are available on request.</p>
+                        <a href="#contact">Request references <i class="fas fa-arrow-right" style="font-size:0.75rem;"></i></a>
                     </div>
                 </div>
             </div>
@@ -2582,9 +3057,9 @@
                         </ul>
                         <div class="social-links">
                             <a href="https://www.linkedin.com/in/jason-omac-6b1983164/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                            <a href="#" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                            <a href="https://github.com/jasonomacabrahan" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="mailto:json7649@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="tel:+639763894253" aria-label="Phone"><i class="fas fa-phone"></i></a>
                         </div>
                     </div>
                     <form class="contact-form" id="contact-form">
@@ -2784,13 +3259,16 @@
                         <span class="logo-icon">JO</span>
                         <h3>Jason Omac</h3>
                     </div>
-                    <p>Web & Mobile Developer specializing in Laravel, Flutter, WordPress, Webflow, and Shopify. Also offering SEO, Social Media Marketing, Graphic Design, Logo Design, and Video Editing.</p>
+                    <p>Full-Stack Developer specializing in Laravel, Flutter, and Vue.js — building reliable web platforms, ERP systems, and mobile apps. Open to remote and on-site roles.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#projects">Projects</a></li>
+                        <li><a href="#" onclick="window.print();return false;">Résumé</a></li>
+                        <li><a href="https://github.com/jasonomacabrahan" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/jason-omac-6b1983164/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -3191,6 +3669,60 @@
             dots[index].classList.add('active');
             sliderState[sliderId] = index;
         }
+
+        // Hero photo slider (autoplay + manual controls)
+        (function initHeroSlider() {
+            const slider = document.getElementById('hero-slider');
+            if (!slider) return;
+            const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+            const dotsWrap = document.getElementById('hero-dots');
+            const prevBtn = slider.querySelector('.hero-prev');
+            const nextBtn = slider.querySelector('.hero-next');
+            if (!slides.length) return;
+            let index = 0;
+            let timer = null;
+            const INTERVAL = 4500;
+
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', 'Show photo ' + (i + 1));
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => { go(i); restart(); });
+                dotsWrap.appendChild(dot);
+            });
+            const dots = Array.from(dotsWrap.children);
+
+            function go(n) {
+                slides[index].classList.remove('active');
+                dots[index].classList.remove('active');
+                index = (n + slides.length) % slides.length;
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+            }
+            const next = () => go(index + 1);
+            const prev = () => go(index - 1);
+
+            function start() {
+                if (prefersReducedMotion.matches || timer) return;
+                timer = window.setInterval(next, INTERVAL);
+            }
+            function stop() { if (timer) { clearInterval(timer); timer = null; } }
+            function restart() { stop(); start(); }
+
+            nextBtn.addEventListener('click', () => { next(); restart(); });
+            prevBtn.addEventListener('click', () => { prev(); restart(); });
+            slider.addEventListener('mouseenter', stop);
+            slider.addEventListener('mouseleave', start);
+            slider.addEventListener('focusin', stop);
+            slider.addEventListener('focusout', start);
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) { stop(); } else { start(); }
+            });
+
+            start();
+        })();
     </script>
 </body>
 </html>
