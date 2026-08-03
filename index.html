@@ -325,58 +325,41 @@
         }
 
         /* ============================================================
-           Projects — Selected Work
+           Projects — Selected Work (table)
            ============================================================ */
-        .projects-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+        .work-table-wrap { overflow-x: auto; }
+        .work-table { width: 100%; border-collapse: collapse; }
+        .work-table th {
+            font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+            letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+            text-align: left; padding: 0 18px 12px 0; border-bottom: 1px solid var(--line);
         }
-        .project-card {
-            display: flex; flex-direction: column;
-            background: var(--surface); border: 1px solid var(--line);
-            border-radius: 12px; overflow: hidden;
-            transition: border-color 0.2s ease, transform 0.2s ease;
+        .work-table td {
+            padding: 20px 18px 20px 0; border-bottom: 1px solid var(--line);
+            vertical-align: top;
         }
-        .project-card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
-        .project-card.hidden-project { display: none; }
-        .projects-grid.is-expanded .project-card.hidden-project { display: flex; }
+        .work-table tbody tr { transition: background 0.2s ease; }
+        .work-table tbody tr:hover { background: var(--surface); }
+        .work-table th:last-child, .work-table td:last-child { padding-right: 0; }
 
-        .project-media {
-            position: relative; aspect-ratio: 16 / 10; overflow: hidden;
-            background: var(--paper); border-bottom: 1px solid var(--line);
+        .work-table .c-no {
+            width: 46px; font-family: var(--mono); font-size: 0.78rem;
+            color: var(--accent); padding-top: 22px;
         }
-        .project-media img {
-            width: 100%; height: 100%; object-fit: cover; cursor: zoom-in;
-            transition: transform 0.4s ease;
-        }
-        .project-card:hover .project-media img { transform: scale(1.03); }
-
-        /* Typographic "brand" tile for projects without a screenshot */
-        .brand-tile {
-            width: 100%; height: 100%; display: flex; flex-direction: column;
-            justify-content: center; padding: 26px; background: var(--ink); color: var(--paper);
-        }
-        .brand-tile .bt-kicker {
-            font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em;
-            text-transform: uppercase; color: #B9C0F0; margin-bottom: 12px;
-        }
-        .brand-tile h4 {
-            font-family: var(--display); font-weight: 600; font-size: 1.6rem;
-            line-height: 1.1; letter-spacing: -0.01em;
-        }
-        .brand-tile p { font-size: 0.85rem; color: rgba(243,242,236,0.6); margin-top: 8px; }
-
-        .project-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
-        .project-head {
-            display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px;
-        }
-        .project-no { font-family: var(--mono); font-size: 0.78rem; color: var(--accent); }
-        .project-body h3 {
-            font-family: var(--display); font-weight: 600; font-size: 1.2rem;
+        .work-table .c-proj { width: 46%; }
+        .work-table .c-proj h3 {
+            font-family: var(--display); font-weight: 600; font-size: 1.08rem;
             letter-spacing: -0.01em; color: var(--ink);
         }
-        .project-body p { font-size: 0.94rem; color: var(--ink-soft); margin-bottom: 16px; }
+        .work-table .c-proj p { font-size: 0.9rem; color: var(--ink-soft); margin-top: 6px; max-width: 58ch; }
+        .work-table .c-stack { width: 25%; }
+        .work-table .c-link { width: 180px; }
+
+        .work-table tr.hidden-project { display: none; }
+        .work-table.is-expanded tr.hidden-project { display: table-row; }
+
         .project-tags {
-            display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; margin-bottom: 16px;
+            display: flex; flex-wrap: wrap; gap: 6px;
         }
         .tag {
             font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft);
@@ -398,22 +381,6 @@
             font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
             border: 1px solid var(--line-strong); border-radius: 3px; padding: 1px 5px; color: var(--ink-soft);
         }
-
-        /* In-card screenshot slider (NIMOS app) */
-        .project-slider .slider-img { position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s ease; }
-        .project-slider .slider-img.active { opacity: 1; position: relative; }
-        .slider-btn {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            width: 34px; height: 34px; border-radius: 50%;
-            background: rgba(27,26,21,0.55); color: #fff; border: none; cursor: pointer;
-            display: grid; place-items: center; font-size: 1rem; z-index: 2;
-            transition: background 0.2s ease;
-        }
-        .slider-btn:hover { background: rgba(27,26,21,0.8); }
-        .slider-prev { left: 10px; } .slider-next { right: 10px; }
-        .slider-dots { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 7px; z-index: 2; }
-        .slider-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; }
-        .slider-dot.active { background: #fff; }
 
         .show-more-wrap { text-align: center; margin-top: 36px; }
 
@@ -652,7 +619,15 @@
             .nav a.nav-resume { margin: 8px 0 0; text-align: center; border: 1px solid var(--line-strong); border-radius: 6px; }
             .nav-toggle { display: grid; place-items: center; }
             .section { padding: 68px 0; }
-            .projects-grid { grid-template-columns: 1fr; }
+            /* Work table collapses into stacked blocks */
+            .work-table thead { display: none; }
+            .work-table, .work-table tbody, .work-table tr, .work-table td { display: block; width: auto; }
+            .work-table tr { border-bottom: 1px solid var(--line); padding: 20px 0; }
+            .work-table tr:first-child { border-top: 1px solid var(--line); }
+            .work-table td { border: 0; padding: 0; }
+            .work-table .c-no { padding-top: 0; margin-bottom: 6px; }
+            .work-table .c-stack, .work-table .c-link { margin-top: 12px; }
+            .work-table.is-expanded tr.hidden-project { display: block; }
             .xp { grid-template-columns: 1fr; gap: 6px; }
             .xp-date { order: -1; }
             .metrics-grid { grid-template-columns: repeat(2, 1fr); }
@@ -809,188 +784,179 @@
                     <h2 class="section-title">Selected Work</h2>
                     <p class="section-note">Production platforms and apps in daily use — a mix of public links and private systems I can walk through on request.</p>
                 </div>
-                <div class="projects-grid" id="projects-grid">
-                    <!-- 1. NIMOS Meter Reader (Flutter, in-card slider) -->
-                    <article class="project-card reveal">
-                        <div class="project-media project-slider" id="flutter-slider">
-                            <img src="img/portfolio/flutter-project/2c491424-3262-46cc-b7e1-aced92db09db.jfif" alt="NIMOS Meter Reader App — screenshot 1" class="slider-img active" loading="lazy">
-                            <img src="img/portfolio/flutter-project/3a1c860a-a050-4ae1-ae14-b2ad76e1c10d.jfif" alt="NIMOS Meter Reader App — screenshot 2" class="slider-img" loading="lazy">
-                            <img src="img/portfolio/flutter-project/75da991d-2d21-4aef-b807-b84002303cfc.jfif" alt="NIMOS Meter Reader App — screenshot 3" class="slider-img" loading="lazy">
-                            <img src="img/portfolio/flutter-project/c7180a5e-e485-400c-bcba-53343392748a.jfif" alt="NIMOS Meter Reader App — screenshot 4" class="slider-img" loading="lazy">
-                            <button class="slider-btn slider-prev" onclick="slideProject('flutter-slider', -1)" aria-label="Previous image">‹</button>
-                            <button class="slider-btn slider-next" onclick="slideProject('flutter-slider', 1)" aria-label="Next image">›</button>
-                            <div class="slider-dots" id="flutter-slider-dots">
-                                <span class="slider-dot active" onclick="goToSlide('flutter-slider', 0)"></span>
-                                <span class="slider-dot" onclick="goToSlide('flutter-slider', 1)"></span>
-                                <span class="slider-dot" onclick="goToSlide('flutter-slider', 2)"></span>
-                                <span class="slider-dot" onclick="goToSlide('flutter-slider', 3)"></span>
-                            </div>
-                        </div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">01</span><h3>NIMOS Meter Reader App</h3></div>
-                            <p>Replaced paper-based meter reading at a water utility with a Flutter app that syncs real-time consumption data to the server and auto-generates billing — cutting processing time from days to minutes.</p>
-                            <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">REST API</span><span class="tag">Laravel</span></div>
-                            <span class="project-private"><span class="lock">PRIVATE</span> Walkthrough on request</span>
-                        </div>
-                    </article>
+                <div class="work-table-wrap reveal">
+                    <table class="work-table" id="projects-table">
+                        <thead>
+                            <tr>
+                                <th class="c-no" scope="col">#</th>
+                                <th class="c-proj" scope="col">Project</th>
+                                <th class="c-stack" scope="col">Stack</th>
+                                <th class="c-link" scope="col">Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="c-no">01</td>
+                                <td class="c-proj">
+                                    <h3>NIMOS Meter Reader App</h3>
+                                    <p>Replaced paper-based meter reading at a water utility with a Flutter app that syncs real-time consumption data to the server and auto-generates billing — cutting processing time from days to minutes.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">REST API</span><span class="tag">Laravel</span></div></td>
+                                <td class="c-link"><span class="project-private"><span class="lock">PRIVATE</span> On request</span></td>
+                            </tr>
 
-                    <!-- 2. Skin Pretty Shapewear -->
-                    <article class="project-card reveal">
-                        <div class="project-media"><div class="brand-tile"><span class="bt-kicker">Shopify Store</span><h4>Skin Pretty<br>Shapewear</h4><p>Chicago, Illinois</p></div></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">02</span><h3>Skin Pretty Shapewear</h3></div>
-                            <p>Shopify ecommerce store for a shapewear brand in Chicago — collection browsing, consultations, account flows, and a polished shopping experience built for conversion.</p>
-                            <div class="project-tags"><span class="tag">Shopify</span><span class="tag">Ecommerce</span><span class="tag">Theme Dev</span><span class="tag">UX</span></div>
-                            <a href="https://skinprettyshapewear.com/" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr>
+                                <td class="c-no">02</td>
+                                <td class="c-proj">
+                                    <h3>Skin Pretty Shapewear</h3>
+                                    <p>Shopify ecommerce store for a shapewear brand in Chicago — collection browsing, consultations, account flows, and a polished shopping experience built for conversion.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Shopify</span><span class="tag">Ecommerce</span><span class="tag">Theme Dev</span><span class="tag">UX</span></div></td>
+                                <td class="c-link"><a href="https://skinprettyshapewear.com/" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <!-- 3. Taskly -->
-                    <article class="project-card reveal">
-                        <div class="project-media"><div class="brand-tile"><span class="bt-kicker">Flutter App</span><h4>Taskly</h4><p>Task management software</p></div></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">03</span><h3>Taskly</h3></div>
-                            <p>Task management app built with Flutter to help teams organize work, manage priorities, and stay on top of daily execution through a clean cross-platform workflow.</p>
-                            <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Cross-Platform</span></div>
-                            <a href="https://taskly-ad3e1.web.app/#/login" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr>
+                                <td class="c-no">03</td>
+                                <td class="c-proj">
+                                    <h3>Taskly</h3>
+                                    <p>Task management app built with Flutter to help teams organize work, manage priorities, and stay on top of daily execution through a clean cross-platform workflow.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Cross-Platform</span></div></td>
+                                <td class="c-link"><a href="https://taskly-ad3e1.web.app/#/login" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <!-- 4. Mabuhay Group ERP -->
-                    <article class="project-card reveal">
-                        <div class="project-media"><img src="img/portfolio/mabuhaygroup-erp.jpg" alt="Mabuhay Group ERP" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">04</span><h3>Mabuhay Group ERP</h3></div>
-                            <p>Multi-module ERP consolidating HR, payroll, project management, document tracking, fleet, and finance into one platform used across every department daily.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span><span class="tag">REST API</span></div>
-                            <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr>
+                                <td class="c-no">04</td>
+                                <td class="c-proj">
+                                    <h3>Mabuhay Group ERP</h3>
+                                    <p>Multi-module ERP consolidating HR, payroll, project management, document tracking, fleet, and finance into one platform used across every department daily.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span><span class="tag">REST API</span></div></td>
+                                <td class="c-link"><a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <!-- 5. HR Recruitment Platform -->
-                    <article class="project-card reveal">
-                        <div class="project-media"><div class="brand-tile"><span class="bt-kicker">Laravel · Vue.js</span><h4>HR Recruitment<br>Platform</h4><p>Mabuhay Group</p></div></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">05</span><h3>HR Recruitment Platform</h3></div>
-                            <p>End-to-end recruitment system handling job postings, applicant tracking, and onboarding workflows — replacing manual HR coordination and reducing time-to-hire.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span></div>
-                            <a href="https://mabuhaygroup.com/careers" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr>
+                                <td class="c-no">05</td>
+                                <td class="c-proj">
+                                    <h3>HR Recruitment Platform</h3>
+                                    <p>End-to-end recruitment system handling job postings, applicant tracking, and onboarding workflows — replacing manual HR coordination and reducing time-to-hire.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span></div></td>
+                                <td class="c-link"><a href="https://mabuhaygroup.com/careers" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <!-- 6. Project Management Tool -->
-                    <article class="project-card reveal">
-                        <div class="project-media"><img src="img/portfolio/project-management-kanban.jpg" alt="Mabuhay Group project management tool" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">06</span><h3>Project Management Tool</h3></div>
-                            <p>Kanban-style task system for Mabuhay Group — team leads assign, track, and log work across departments with full audit history.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Kanban</span><span class="tag">MySQL</span></div>
-                            <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr>
+                                <td class="c-no">06</td>
+                                <td class="c-proj">
+                                    <h3>Project Management Tool</h3>
+                                    <p>Kanban-style task system for Mabuhay Group — team leads assign, track, and log work across departments with full audit history.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Kanban</span><span class="tag">MySQL</span></div></td>
+                                <td class="c-link"><a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <!-- 7. Mabuhay Group HRIS -->
-                    <article class="project-card reveal">
-                        <div class="project-media"><img src="img/portfolio/hr-management-system.jpg" alt="Mabuhay Group HRIS" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">07</span><h3>Mabuhay Group HRIS</h3></div>
-                            <p>Centralized HR information system managing employee records, leave, performance data, and internal workflow approvals across the whole organization.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span></div>
-                            <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr>
+                                <td class="c-no">07</td>
+                                <td class="c-proj">
+                                    <h3>Mabuhay Group HRIS</h3>
+                                    <p>Centralized HR information system managing employee records, leave, performance data, and internal workflow approvals across the whole organization.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span></div></td>
+                                <td class="c-link"><a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <!-- 8. Bousticare E-Commerce -->
-                    <article class="project-card reveal">
-                        <div class="project-media"><div class="brand-tile"><span class="bt-kicker">PHP · MySQL</span><h4>Bousticare<br>E-Commerce</h4><p>Custom online store</p></div></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">08</span><h3>Bousticare E-Commerce</h3></div>
-                            <p>Custom-built online store for a beauty brand with inventory management, shopping cart, payment integration, and an admin dashboard — no third-party platform fees.</p>
-                            <div class="project-tags"><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MySQL</span></div>
-                            <span class="project-private"><span class="lock">PRIVATE</span> Walkthrough on request</span>
-                        </div>
-                    </article>
+                            <tr>
+                                <td class="c-no">08</td>
+                                <td class="c-proj">
+                                    <h3>Bousticare E-Commerce</h3>
+                                    <p>Custom-built online store for a beauty brand with inventory management, shopping cart, payment integration, and an admin dashboard — no third-party platform fees.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MySQL</span></div></td>
+                                <td class="c-link"><span class="project-private"><span class="lock">PRIVATE</span> On request</span></td>
+                            </tr>
 
-                    <!-- Hidden (revealed via "View all") -->
-                    <article class="project-card hidden-project reveal">
-                        <div class="project-media"><img src="img/portfolio/payroll-management-system.jpg" alt="Payroll management system" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">09</span><h3>Payroll Management System</h3></div>
-                            <p>Automated payroll handling salary computation, tax deductions, allowances, and payslip generation — eliminating spreadsheet errors and cutting processing time.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
-                            <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <!-- Hidden (revealed via "View all") -->
+                            <tr class="hidden-project">
+                                <td class="c-no">09</td>
+                                <td class="c-proj">
+                                    <h3>Payroll Management System</h3>
+                                    <p>Automated payroll handling salary computation, tax deductions, allowances, and payslip generation — eliminating spreadsheet errors and cutting processing time.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span></div></td>
+                                <td class="c-link"><a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <article class="project-card hidden-project reveal">
-                        <div class="project-media"><img src="img/portfolio/disbursing-system.jpg" alt="Disbursing system" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">10</span><h3>Disbursing System</h3></div>
-                            <p>Fund disbursement platform with multi-level approval workflows, payment records, and a full transaction audit trail — accountability at every fund release.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Approvals</span></div>
-                            <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr class="hidden-project">
+                                <td class="c-no">10</td>
+                                <td class="c-proj">
+                                    <h3>Disbursing System</h3>
+                                    <p>Fund disbursement platform with multi-level approval workflows, payment records, and a full transaction audit trail — accountability at every fund release.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Approvals</span></div></td>
+                                <td class="c-link"><a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <article class="project-card hidden-project reveal">
-                        <div class="project-media"><img src="img/portfolio/document-tracking-system.jpg" alt="Document tracking system" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">11</span><h3>Document Tracking System</h3></div>
-                            <p>Internal document routing tracking status, processing history, and office-to-office handoffs — visibility into paper trails that were impossible to monitor before.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Workflow</span></div>
-                            <a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr class="hidden-project">
+                                <td class="c-no">11</td>
+                                <td class="c-proj">
+                                    <h3>Document Tracking System</h3>
+                                    <p>Internal document routing tracking status, processing history, and office-to-office handoffs — visibility into paper trails that were impossible to monitor before.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Workflow</span></div></td>
+                                <td class="c-link"><a href="https://mabuhaygroup.com" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <article class="project-card hidden-project reveal">
-                        <div class="project-media"><img src="img/portfolio/coop-and-finance.jpg" alt="Cooperative and finance management system" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">12</span><h3>Cooperative Finance System</h3></div>
-                            <p>End-to-end cooperative management covering member records, loan tracking, savings accounts, financial transactions, and automated operational reporting.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Finance</span></div>
-                            <span class="project-private"><span class="lock">PRIVATE</span> Walkthrough on request</span>
-                        </div>
-                    </article>
+                            <tr class="hidden-project">
+                                <td class="c-no">12</td>
+                                <td class="c-proj">
+                                    <h3>Cooperative Finance System</h3>
+                                    <p>End-to-end cooperative management covering member records, loan tracking, savings accounts, financial transactions, and automated operational reporting.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Finance</span></div></td>
+                                <td class="c-link"><span class="project-private"><span class="lock">PRIVATE</span> On request</span></td>
+                            </tr>
 
-                    <article class="project-card hidden-project reveal">
-                        <div class="project-media"><img src="img/portfolio/quarry-management-system.jpg" alt="Quarry management system" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">13</span><h3>Quarry Management System</h3></div>
-                            <p>Operations platform tracking material extraction, equipment usage, job orders, and daily production — replacing manual logbooks with real-time dashboards.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Operations</span></div>
-                            <span class="project-private"><span class="lock">PRIVATE</span> Walkthrough on request</span>
-                        </div>
-                    </article>
+                            <tr class="hidden-project">
+                                <td class="c-no">13</td>
+                                <td class="c-proj">
+                                    <h3>Quarry Management System</h3>
+                                    <p>Operations platform tracking material extraction, equipment usage, job orders, and daily production — replacing manual logbooks with real-time dashboards.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Operations</span></div></td>
+                                <td class="c-link"><span class="project-private"><span class="lock">PRIVATE</span> On request</span></td>
+                            </tr>
 
-                    <article class="project-card hidden-project reveal">
-                        <div class="project-media"><img src="img/portfolio/fleet.jpg" alt="Fleet management system" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">14</span><h3>Fleet Management System</h3></div>
-                            <p>Vehicle fleet platform handling trip scheduling, driver assignment, maintenance records, and real-time status — full visibility across the fleet for ops managers.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Fleet Ops</span></div>
-                            <span class="project-private"><span class="lock">PRIVATE</span> Walkthrough on request</span>
-                        </div>
-                    </article>
+                            <tr class="hidden-project">
+                                <td class="c-no">14</td>
+                                <td class="c-proj">
+                                    <h3>Fleet Management System</h3>
+                                    <p>Vehicle fleet platform handling trip scheduling, driver assignment, maintenance records, and real-time status — full visibility across the fleet for ops managers.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">Fleet Ops</span></div></td>
+                                <td class="c-link"><span class="project-private"><span class="lock">PRIVATE</span> On request</span></td>
+                            </tr>
 
-                    <article class="project-card hidden-project reveal" data-lightbox-images="img/portfolio/nimos.jpg,img/portfolio/nimos-2.jpg">
-                        <div class="project-media"><img src="img/portfolio/nimos.jpg" alt="NIMOS ERP" loading="lazy"></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">15</span><h3>NIMOS ERP</h3></div>
-                            <p>Full ERP web platform for a water utility — billing management, meter reading, customer records, reporting dashboards, and cross-department coordination.</p>
-                            <div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span><span class="tag">Dashboard</span></div>
-                            <a href="https://app.nimos.site" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr class="hidden-project">
+                                <td class="c-no">15</td>
+                                <td class="c-proj">
+                                    <h3>NIMOS ERP</h3>
+                                    <p>Full ERP web platform for a water utility — billing management, meter reading, customer records, reporting dashboards, and cross-department coordination.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span><span class="tag">Dashboard</span></div></td>
+                                <td class="c-link"><a href="https://app.nimos.site" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
 
-                    <article class="project-card hidden-project reveal">
-                        <div class="project-media"><div class="brand-tile"><span class="bt-kicker">WordPress · CMS</span><h4>Boston.gov.ph</h4><p>Municipal government portal</p></div></div>
-                        <div class="project-body">
-                            <div class="project-head"><span class="project-no">16</span><h3>Boston.gov.ph</h3></div>
-                            <p>Official municipal website for Boston, Davao Oriental — news, public services, and announcements through a mobile-friendly, CMS-powered portal.</p>
-                            <div class="project-tags"><span class="tag">WordPress</span><span class="tag">PHP</span><span class="tag">Government</span></div>
-                            <a href="https://boston.gov.ph" class="project-link" target="_blank" rel="noopener noreferrer">Visit project <span class="arw">→</span></a>
-                        </div>
-                    </article>
+                            <tr class="hidden-project">
+                                <td class="c-no">16</td>
+                                <td class="c-proj">
+                                    <h3>Boston.gov.ph</h3>
+                                    <p>Official municipal website for Boston, Davao Oriental — news, public services, and announcements through a mobile-friendly, CMS-powered portal.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">WordPress</span><span class="tag">PHP</span><span class="tag">Government</span></div></td>
+                                <td class="c-link"><a href="https://boston.gov.ph" class="project-link" target="_blank" rel="noopener noreferrer">Visit <span class="arw">→</span></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="show-more-wrap">
                     <button class="btn btn-outline" id="show-more-btn" onclick="toggleProjects()">View all projects (8 more) <span class="arw">↓</span></button>
@@ -1008,7 +974,7 @@
                 </div>
                 <div class="xp-list">
                     <div class="xp reveal">
-                        <div class="xp-date">Current</div>
+                        <div class="xp-date"></div>
                         <div>
                             <div class="xp-title">System Developer Team Lead</div>
                             <div class="xp-company">TL Mabuhay Driving Lesson Academy, Inc.</div>
@@ -1016,7 +982,7 @@
                         </div>
                     </div>
                     <div class="xp reveal">
-                        <div class="xp-date">Current</div>
+                        <div class="xp-date"></div>
                         <div>
                             <div class="xp-title">IT Consultant</div>
                             <div class="xp-company">NEBAWASCO</div>
@@ -1612,43 +1578,12 @@
 
         /* ---- Show more projects ---- */
         window.toggleProjects = function () {
-            var grid = document.getElementById('projects-grid');
+            var table = document.getElementById('projects-table');
             var btn = document.getElementById('show-more-btn');
-            var expanded = grid.classList.toggle('is-expanded');
+            var expanded = table.classList.toggle('is-expanded');
             btn.innerHTML = expanded
                 ? 'Show less <span class="arw">↑</span>'
                 : 'View all projects (8 more) <span class="arw">↓</span>';
-            // reveal newly shown cards immediately
-            if (expanded) {
-                grid.querySelectorAll('.hidden-project.reveal').forEach(function (el) { el.classList.add('in'); });
-            }
-        };
-
-        /* ---- In-card project image slider ---- */
-        var sliderState = {};
-        window.slideProject = function (sliderId, direction) {
-            var slider = document.getElementById(sliderId);
-            var imgs = slider.querySelectorAll('.slider-img');
-            var dots = document.getElementById(sliderId + '-dots').querySelectorAll('.slider-dot');
-            if (!sliderState[sliderId]) sliderState[sliderId] = 0;
-            var current = sliderState[sliderId];
-            imgs[current].classList.remove('active');
-            dots[current].classList.remove('active');
-            current = (current + direction + imgs.length) % imgs.length;
-            imgs[current].classList.add('active');
-            dots[current].classList.add('active');
-            sliderState[sliderId] = current;
-        };
-        window.goToSlide = function (sliderId, index) {
-            var slider = document.getElementById(sliderId);
-            var imgs = slider.querySelectorAll('.slider-img');
-            var dots = document.getElementById(sliderId + '-dots').querySelectorAll('.slider-dot');
-            if (!sliderState[sliderId]) sliderState[sliderId] = 0;
-            imgs[sliderState[sliderId]].classList.remove('active');
-            dots[sliderState[sliderId]].classList.remove('active');
-            imgs[index].classList.add('active');
-            dots[index].classList.add('active');
-            sliderState[sliderId] = index;
         };
 
         /* ---- Lightbox ---- */
@@ -1695,22 +1630,6 @@
             item.addEventListener('click', function () { openFromGallery(index); });
             item.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFromGallery(index); }
-            });
-        });
-
-        // Project screenshots open in the same lightbox (single image or explicit set)
-        document.querySelectorAll('.project-media img').forEach(function (img) {
-            img.addEventListener('click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                var card = img.closest('.project-card');
-                var title = (card && card.querySelector('.project-body h3') ? card.querySelector('.project-body h3').textContent : img.alt) || 'Project preview';
-                var extra = card && card.dataset.lightboxImages
-                    ? card.dataset.lightboxImages.split(',').map(function (s) { return s.trim(); }).filter(Boolean)
-                    : [];
-                var srcs = extra.length ? extra : [img.src];
-                images = srcs.map(function (src) { return { src: src, caption: title }; });
-                openLightbox(0);
             });
         });
 
