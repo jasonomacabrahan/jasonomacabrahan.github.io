@@ -8,7 +8,7 @@
     <meta name="author" content="Jason Omac">
     <meta name="keywords" content="Jason Omac, Full-Stack Developer, Laravel Developer, Flutter Developer, Vue.js, PHP, Web Developer Philippines, Software Engineer">
     <link rel="canonical" href="https://jasonomacabrahan.github.io/">
-    <meta name="theme-color" content="#F3F2EC">
+    <meta name="theme-color" content="#f7f9fb">
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
     <meta name="twitter:image" content="https://jasonomacabrahan.github.io/img/jason-omac-pictire-removebg-preview.jpg">
 
     <!-- Favicon (inline SVG, matches the JO logo) -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231B1A15'/%3E%3Ctext x='50%25' y='50%25' dy='.05em' font-family='monospace' font-size='26' font-weight='700' fill='%23F3F2EC' text-anchor='middle' dominant-baseline='central'%3EJO%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230f172a'/%3E%3Ctext x='50%25' y='50%25' dy='.05em' font-family='monospace' font-size='26' font-weight='700' fill='%23ffffff' text-anchor='middle' dominant-baseline='central'%3EJO%3C/text%3E%3C/svg%3E">
 
     <!-- Structured data: helps search engines build a knowledge panel for your name -->
     <script type="application/ld+json">
@@ -52,32 +52,62 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================================
-           Design tokens — technical / engineer, light "paper" theme
+           Design tokens — "Technical Prestige"
+           Corporate Modern with a Minimalist Core. Deep-slate ink on a
+           soft cool-gray ground; pure-white containers; one electric
+           blue reserved for action. See DESIGN.md.
            ============================================================ */
         :root {
-            --paper: #F3F2EC;      /* page background */
-            --surface: #FBFAF6;    /* cards / raised paper */
-            --ink: #1B1A15;        /* primary text (warm near-black) */
-            --ink-soft: #55534A;   /* secondary text */
-            --muted: #8C8A7E;      /* tertiary / mono labels */
-            --line: #E1DED3;       /* hairline */
-            --line-strong: #C9C6B8;/* stronger hairline */
-            --accent: #2A44CC;     /* single signal color, used sparingly */
-            --accent-ink: #1E3299; /* accent hover */
-            --accent-soft: rgba(42, 68, 204, 0.08);
-            --live: #2FA24B;       /* availability dot */
+            /* --- Surfaces (tonal layering, level 0 → level 1) --- */
+            --paper: #f7f9fb;      /* level 0 — page background */
+            --surface: #ffffff;    /* level 1 — cards, pure white to "pop" */
+            --surface-sunken: #f2f4f6; /* recessed wells / hover ground */
+            --surface-chip: #eceef0;   /* low-contrast chip ground */
 
-            --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-            --display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            /* --- Ink (deep slate, never pure black) --- */
+            --ink: #0f172a;        /* headings — Deep Slate */
+            --ink-soft: #434655;   /* body copy — secondary slate */
+            --muted: #737686;      /* tertiary / mono metadata */
 
-            --maxw: 1180px;
-            --pad: 24px;
-            --header-h: 66px;
+            /* --- Hairlines (architectural detail) --- */
+            --line: #e2e5ea;       /* Slate-200 hairline */
+            --line-strong: #c3c6d7;/* stronger hairline / outline-variant */
+
+            /* --- Action: the sole signal color --- */
+            --accent: #004ac6;     /* electric blue — CTAs, active states */
+            --accent-ink: #00368f; /* accent hover (darken, no gradient) */
+            --accent-bright: #2563eb;
+            --accent-soft: rgba(0, 74, 198, 0.07);
+            --live: #2fa24b;       /* availability dot */
+
+            /* --- Error --- */
+            --error: #ba1a1a;
+            --error-container: #ffdad6;
+            --on-error-container: #93000a;
+
+            /* --- Type: "Industrial Elegance" --- */
+            --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+            --display: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+            /* --- Shape: "Semi-Sharp" --- */
+            --r-sm: 0.125rem;
+            --r: 0.25rem;          /* inputs, buttons */
+            --r-lg: 0.5rem;        /* cards, images */
+
+            /* --- Elevation: ambient, diffused --- */
+            --shadow-2: 0 20px 40px rgba(15, 23, 42, 0.05);
+            --shadow-overlay: 0 32px 64px rgba(15, 23, 42, 0.22);
+
+            /* --- Layout: 12-column fixed grid, 4px scale --- */
+            --maxw: 1280px;
+            --pad: 32px;           /* gutter */
+            --section-gap: 120px;
+            --header-h: 68px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -86,15 +116,16 @@
 
         body {
             font-family: var(--body);
-            line-height: 1.65;
-            color: var(--ink);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--ink-soft);
             background: var(--paper);
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
             overflow-x: hidden;
         }
 
-        ::selection { background: var(--ink); color: var(--paper); }
+        ::selection { background: var(--ink); color: #fff; }
 
         a { color: inherit; }
 
@@ -117,9 +148,9 @@
 
         .skip-link {
             position: absolute; top: -60px; left: 16px; z-index: 3000;
-            background: var(--ink); color: var(--paper);
-            padding: 10px 18px; text-decoration: none;
-            font-family: var(--mono); font-size: 0.8rem;
+            background: var(--ink); color: #fff;
+            padding: 10px 18px; text-decoration: none; border-radius: var(--r);
+            font-family: var(--mono); font-size: 0.8125rem;
             transition: top 0.2s ease;
         }
         .skip-link:focus { top: 8px; }
@@ -129,11 +160,12 @@
             outline-offset: 3px;
         }
 
-        /* Reusable mono utilities */
+        /* Reusable mono utilities — label-sm */
         .mono {
             font-family: var(--mono);
-            font-size: 0.74rem;
-            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
             color: var(--muted);
         }
@@ -145,16 +177,16 @@
             position: fixed; top: 0; left: 0; width: 100%;
             height: var(--header-h);
             display: flex; align-items: center;
-            background: rgba(243, 242, 236, 0.82);
-            backdrop-filter: saturate(140%) blur(10px);
-            -webkit-backdrop-filter: saturate(140%) blur(10px);
+            background: rgba(247, 249, 251, 0.72);
+            backdrop-filter: saturate(150%) blur(15px);
+            -webkit-backdrop-filter: saturate(150%) blur(15px);
             border-bottom: 1px solid transparent;
             z-index: 1000;
             transition: border-color 0.25s ease, background 0.25s ease;
         }
         .site-header.scrolled {
             border-bottom-color: var(--line);
-            background: rgba(243, 242, 236, 0.92);
+            background: rgba(247, 249, 251, 0.86);
         }
         .site-header .container {
             display: flex; align-items: center; justify-content: space-between;
@@ -165,142 +197,173 @@
         .brand-mark {
             width: 34px; height: 34px; flex: 0 0 auto;
             display: grid; place-items: center;
-            background: var(--ink); color: var(--paper);
+            background: var(--ink); color: #fff;
             font-family: var(--mono); font-weight: 600; font-size: 0.82rem;
-            border-radius: 6px;
+            border-radius: var(--r);
         }
         .brand-name {
-            font-family: var(--mono); font-size: 0.9rem; font-weight: 500;
+            font-family: var(--mono); font-size: 0.875rem; font-weight: 500;
             letter-spacing: 0.02em; color: var(--ink);
         }
 
-        .nav { display: flex; align-items: center; gap: 6px; }
+        .nav { display: flex; align-items: center; gap: 4px; }
         .nav a {
-            font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.02em;
+            font-family: var(--mono); font-size: 0.8125rem; font-weight: 500;
+            letter-spacing: 0.05em;
             text-decoration: none; color: var(--ink-soft);
-            padding: 7px 10px; border-radius: 5px;
+            padding: 8px 12px; border-radius: var(--r);
             transition: color 0.2s ease, background 0.2s ease;
         }
-        .nav a:hover { color: var(--ink); background: rgba(27, 26, 21, 0.05); }
+        .nav a:hover { color: var(--ink); background: rgba(15, 23, 42, 0.05); }
         .nav a.active { color: var(--accent); }
         .nav a.nav-resume {
-            color: var(--ink); border: 1px solid var(--line-strong);
-            margin-left: 6px;
+            color: var(--ink); border: 1px solid var(--ink);
+            margin-left: 8px;
         }
-        .nav a.nav-resume:hover { border-color: var(--ink); background: transparent; }
+        .nav a.nav-resume:hover { background: var(--ink); color: #fff; }
 
         .nav-toggle {
             display: none; background: none; border: 1px solid var(--line-strong);
-            border-radius: 6px; width: 40px; height: 38px; cursor: pointer;
+            border-radius: var(--r); width: 40px; height: 38px; cursor: pointer;
             color: var(--ink); font-size: 1.1rem; line-height: 1;
         }
 
         /* ============================================================
            Section shell + headings
            ============================================================ */
-        .section { padding: 96px 0; border-top: 1px solid var(--line); }
+        .section { padding: var(--section-gap) 0; border-top: 1px solid var(--line); }
         .section:first-of-type { border-top: 0; }
 
         .section-head {
             display: flex; align-items: baseline; gap: 16px;
-            margin-bottom: 44px; flex-wrap: wrap;
+            margin-bottom: 48px; flex-wrap: wrap;
         }
         .section-index {
-            font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+            font-family: var(--mono); font-size: 0.875rem; font-weight: 500;
             color: var(--accent); letter-spacing: 0.05em;
         }
         .section-title {
-            font-family: var(--display); font-weight: 600;
-            font-size: clamp(1.6rem, 3.2vw, 2.35rem);
-            letter-spacing: -0.02em; line-height: 1.1; color: var(--ink);
+            font-family: var(--display); font-weight: 700;
+            font-size: clamp(2rem, 3.6vw, 3rem);
+            letter-spacing: -0.01em; line-height: 1.2; color: var(--ink);
         }
         .section-note {
             font-family: var(--body); color: var(--ink-soft);
-            max-width: 46ch; margin-left: auto; font-size: 0.95rem;
+            max-width: 46ch; margin-left: auto; font-size: 1rem;
         }
 
         /* ============================================================
            Buttons
            ============================================================ */
         .btn {
-            display: inline-flex; align-items: center; gap: 9px;
-            font-family: var(--mono); font-size: 0.82rem; font-weight: 500;
-            letter-spacing: 0.02em; text-decoration: none; cursor: pointer;
-            padding: 12px 20px; border-radius: 7px; border: 1px solid transparent;
-            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            display: inline-flex; align-items: center; gap: 8px;
+            font-family: var(--mono); font-size: 0.875rem; font-weight: 600;
+            letter-spacing: 0.05em; text-decoration: none; cursor: pointer;
+            padding: 14px 24px; border-radius: var(--r); border: 1px solid transparent;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
         .btn:active { transform: translateY(1px); }
-        .btn-primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-        .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
-        .btn-outline { background: transparent; color: var(--ink); border-color: var(--line-strong); }
-        .btn-outline:hover { border-color: var(--ink); }
-        .btn-ghost { background: transparent; color: var(--ink-soft); border-color: transparent; padding-left: 10px; padding-right: 10px; }
+
+        /* Primary — the sole action color. No gradient. */
+        .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .btn-primary:hover { background: var(--accent-ink); border-color: var(--accent-ink); }
+
+        /* Secondary — ghost, slate hairline */
+        .btn-outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+        .btn-outline:hover { background: var(--ink); color: #fff; }
+
+        /* Tertiary — text only, animated underline */
+        .btn-ghost {
+            background: transparent; color: var(--ink-soft); border-color: transparent;
+            padding-left: 4px; padding-right: 4px; position: relative;
+        }
+        .btn-ghost::after {
+            content: ""; position: absolute; left: 4px; right: 4px; bottom: 8px;
+            height: 1px; background: currentColor;
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        }
         .btn-ghost:hover { color: var(--ink); }
+        .btn-ghost:hover::after, .btn-ghost:focus-visible::after { transform: scaleX(1); }
+
         .btn .arw { transition: transform 0.2s ease; }
         .btn:hover .arw { transform: translateX(3px); }
 
         /* ============================================================
            Hero
            ============================================================ */
-        .hero { padding: calc(var(--header-h) + 72px) 0 84px; }
+        .hero { padding: calc(var(--header-h) + 88px) 0 96px; }
         .hero-grid {
             display: grid; grid-template-columns: 1.35fr 0.85fr;
-            gap: 56px; align-items: center;
+            gap: 64px; align-items: center;
         }
         .hero-kicker {
-            font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.06em;
-            color: var(--ink-soft); margin-bottom: 22px;
+            font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--muted); margin-bottom: 24px;
             display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
         }
+        /* Interactive pill — rounded-full is reserved for status indicators */
         .live {
             display: inline-flex; align-items: center; gap: 8px;
-            color: var(--ink); font-size: 0.76rem;
+            color: var(--ink); font-size: 0.75rem;
+            background: var(--surface); border: 1px solid var(--line);
+            border-radius: 9999px; padding: 5px 12px 5px 10px;
         }
         .live-dot {
-            width: 8px; height: 8px; border-radius: 50%;
+            width: 7px; height: 7px; border-radius: 50%;
             background: var(--live); box-shadow: 0 0 0 3px rgba(47, 162, 75, 0.18);
         }
         .hero h1 {
-            font-family: var(--display); font-weight: 600;
-            font-size: clamp(2.1rem, 5vw, 3.4rem);
-            line-height: 1.08; letter-spacing: -0.025em; color: var(--ink);
-            margin-bottom: 22px;
+            font-family: var(--display); font-weight: 800;
+            font-size: clamp(2rem, 5.2vw, 4rem);
+            line-height: 1.1; letter-spacing: -0.02em; color: var(--ink);
+            margin-bottom: 24px;
         }
-        .hero h1 em { font-style: normal; color: var(--accent); }
+        /* Brighter blue for large display emphasis; the deeper --accent stays for actions */
+        .hero h1 em { font-style: normal; color: var(--accent-bright); }
         .hero-lead {
-            font-size: 1.08rem; color: var(--ink-soft);
-            max-width: 52ch; margin-bottom: 30px;
+            font-size: 1.125rem; line-height: 1.6; color: var(--ink-soft);
+            max-width: 52ch; margin-bottom: 32px;
         }
-        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 34px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
         .hero-stack { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
         .hero-stack .mono { margin-right: 2px; }
+        /* Tech chips — low contrast, never competing with the narrative */
         .chip {
-            font-family: var(--mono); font-size: 0.75rem; color: var(--ink-soft);
-            border: 1px solid var(--line); border-radius: 5px;
-            padding: 4px 9px; background: var(--surface);
+            font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+            color: var(--ink-soft);
+            border: 1px solid transparent; border-radius: var(--r-sm);
+            padding: 5px 10px; background: var(--surface-chip);
         }
 
-        /* Hero spec card ("engineer ID") */
+        /* Hero spec card ("engineer ID") — level 1, lifts to level 2 on hover */
         .spec-card {
             background: var(--surface); border: 1px solid var(--line);
-            border-radius: 12px; overflow: hidden;
+            border-radius: var(--r-lg); overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+        }
+        .spec-card:hover {
+            box-shadow: var(--shadow-2); transform: translateY(-4px);
+            border-color: var(--line-strong);
         }
         .spec-photo {
             width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 22%;
-            background: var(--paper); border-bottom: 1px solid var(--line);
+            background: var(--surface-sunken); border-bottom: 1px solid var(--line);
         }
-        .spec-rows { padding: 6px 18px 14px; }
+        .spec-rows { padding: 8px 20px 16px; }
         .spec-row {
             display: grid; grid-template-columns: 84px 1fr; gap: 12px;
-            padding: 11px 0; border-bottom: 1px dashed var(--line);
+            padding: 12px 0; border-bottom: 1px solid var(--line);
             align-items: baseline;
         }
         .spec-row:last-child { border-bottom: 0; }
         .spec-row dt {
-            font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em;
+            font-family: var(--mono); font-size: 0.6875rem; font-weight: 500;
+            letter-spacing: 0.05em;
             text-transform: uppercase; color: var(--muted);
         }
-        .spec-row dd { font-size: 0.9rem; color: var(--ink); }
+        .spec-row dd { font-size: 0.9375rem; color: var(--ink); }
 
         /* ============================================================
            Metrics strip
@@ -310,18 +373,19 @@
             display: grid; grid-template-columns: repeat(4, 1fr);
         }
         .metric {
-            padding: 34px 8px; text-align: center;
+            padding: 36px 8px; text-align: center;
             border-left: 1px solid var(--line);
         }
         .metric:first-child { border-left: 0; }
         .metric-num {
-            font-family: var(--display); font-weight: 600;
-            font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--ink);
-            letter-spacing: -0.02em; line-height: 1;
+            font-family: var(--display); font-weight: 800;
+            font-size: clamp(2rem, 4vw, 3rem); color: var(--ink);
+            letter-spacing: -0.02em; line-height: 1.1;
         }
         .metric-label {
-            font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em;
-            text-transform: uppercase; color: var(--muted); margin-top: 10px;
+            font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase; color: var(--muted); margin-top: 12px;
         }
 
         /* ============================================================
@@ -330,12 +394,12 @@
         .work-table-wrap { overflow-x: auto; }
         .work-table { width: 100%; border-collapse: collapse; }
         .work-table th {
-            font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
-            letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
-            text-align: left; padding: 0 18px 12px 0; border-bottom: 1px solid var(--line);
+            font-family: var(--mono); font-size: 0.6875rem; font-weight: 500;
+            letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
+            text-align: left; padding: 0 20px 12px 0; border-bottom: 1px solid var(--line);
         }
         .work-table td {
-            padding: 20px 18px 20px 0; border-bottom: 1px solid var(--line);
+            padding: 24px 20px 24px 0; border-bottom: 1px solid var(--line);
             vertical-align: top;
         }
         .work-table tbody tr { transition: background 0.2s ease; }
@@ -343,15 +407,16 @@
         .work-table th:last-child, .work-table td:last-child { padding-right: 0; }
 
         .work-table .c-no {
-            width: 46px; font-family: var(--mono); font-size: 0.78rem;
-            color: var(--accent); padding-top: 22px;
+            width: 48px; font-family: var(--mono); font-size: 0.8125rem; font-weight: 500;
+            color: var(--accent); padding-top: 26px;
         }
         .work-table .c-proj { width: 46%; }
+        /* "Header-First": title leads, then stack metadata, then the prose */
         .work-table .c-proj h3 {
-            font-family: var(--display); font-weight: 600; font-size: 1.08rem;
-            letter-spacing: -0.01em; color: var(--ink);
+            font-family: var(--display); font-weight: 700; font-size: 1.25rem;
+            line-height: 1.4; letter-spacing: -0.01em; color: var(--ink);
         }
-        .work-table .c-proj p { font-size: 0.9rem; color: var(--ink-soft); margin-top: 6px; max-width: 58ch; }
+        .work-table .c-proj p { font-size: 0.9375rem; color: var(--ink-soft); margin-top: 8px; max-width: 58ch; }
         .work-table .c-stack { width: 25%; }
         .work-table .c-link { width: 180px; }
 
@@ -362,11 +427,13 @@
             display: flex; flex-wrap: wrap; gap: 6px;
         }
         .tag {
-            font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft);
-            border: 1px solid var(--line); border-radius: 4px; padding: 3px 8px;
+            font-family: var(--mono); font-size: 0.6875rem; font-weight: 500;
+            color: var(--ink-soft); background: var(--surface-chip);
+            border: 1px solid transparent; border-radius: var(--r-sm); padding: 4px 8px;
         }
         .project-link {
-            font-family: var(--mono); font-size: 0.8rem; font-weight: 500;
+            font-family: var(--mono); font-size: 0.8125rem; font-weight: 500;
+            letter-spacing: 0.05em;
             color: var(--accent); text-decoration: none;
             display: inline-flex; align-items: center; gap: 7px;
         }
@@ -374,15 +441,29 @@
         .project-link .arw { transition: transform 0.2s ease; }
         .project-link:hover .arw { transform: translateX(3px); }
         .project-private {
-            font-family: var(--mono); font-size: 0.76rem; color: var(--muted);
+            font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
             display: inline-flex; align-items: center; gap: 7px;
         }
         .project-private .lock {
-            font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em;
-            border: 1px solid var(--line-strong); border-radius: 3px; padding: 1px 5px; color: var(--ink-soft);
+            font-family: var(--mono); font-size: 0.625rem; font-weight: 500; letter-spacing: 0.05em;
+            border: 1px solid var(--line-strong); border-radius: var(--r-sm); padding: 2px 6px; color: var(--ink-soft);
         }
 
-        .show-more-wrap { text-align: center; margin-top: 36px; }
+
+        /* Downloadable build (APK) */
+        .project-link.dl {
+            border: 1px solid var(--line-strong); border-radius: var(--r);
+            padding: 8px 12px; background: var(--accent-soft);
+            transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+        .project-link.dl:hover { border-color: var(--accent); background: var(--accent); color: #fff; }
+        .project-link.dl:hover .arw { transform: translateY(2px); }
+        .dl-meta {
+            display: block; margin-top: 8px;
+            font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.05em;
+            color: var(--muted);
+        }
+        .show-more-wrap { text-align: center; margin-top: 40px; }
 
         /* ============================================================
            Experience
@@ -390,175 +471,191 @@
         .xp-list { border-top: 1px solid var(--line); }
         .xp {
             display: grid; grid-template-columns: 200px 1fr; gap: 28px;
-            padding: 26px 0; border-bottom: 1px solid var(--line);
+            padding: 28px 0; border-bottom: 1px solid var(--line);
         }
-        .xp-date { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); padding-top: 3px; }
-        .xp-title { font-family: var(--display); font-weight: 600; font-size: 1.12rem; color: var(--ink); letter-spacing: -0.01em; }
-        .xp-company { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); margin: 4px 0 10px; }
-        .xp-desc { font-size: 0.94rem; color: var(--ink-soft); max-width: 68ch; }
+        .xp-date { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); padding-top: 4px; }
+        .xp-title { font-family: var(--display); font-weight: 700; font-size: 1.25rem; line-height: 1.4; color: var(--ink); letter-spacing: -0.01em; }
+        .xp-company { font-family: var(--mono); font-size: 0.8125rem; font-weight: 500; color: var(--accent); margin: 4px 0 12px; }
+        .xp-desc { font-size: 0.9375rem; color: var(--ink-soft); max-width: 68ch; }
 
         /* ============================================================
            Stack & Expertise
            ============================================================ */
-        .stack-intro { font-size: 1.05rem; color: var(--ink-soft); max-width: 62ch; margin-bottom: 40px; }
+        .stack-intro { font-size: 1.125rem; line-height: 1.6; color: var(--ink-soft); max-width: 62ch; margin-bottom: 40px; }
         .stack-grid {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
             background: var(--line); border: 1px solid var(--line);
-            border-radius: 12px; overflow: hidden;
+            border-radius: var(--r-lg); overflow: hidden;
         }
-        .stack-cell { background: var(--surface); padding: 22px; }
+        .stack-cell { background: var(--surface); padding: 24px; transition: background 0.25s ease; }
+        .stack-cell:hover { background: var(--surface-sunken); }
         .stack-cell h3 {
-            font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em;
-            text-transform: uppercase; color: var(--ink); margin-bottom: 14px;
+            font-family: var(--mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
+            text-transform: uppercase; color: var(--ink); margin-bottom: 16px;
             display: flex; align-items: center; gap: 8px;
         }
         .stack-cell h3::before { content: ""; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
         .stack-cell ul { list-style: none; }
         .stack-cell li {
-            font-size: 0.9rem; color: var(--ink-soft); padding: 4px 0;
-            border-bottom: 1px dashed var(--line);
+            font-size: 0.9375rem; color: var(--ink-soft); padding: 6px 0;
+            border-bottom: 1px solid var(--line);
         }
         .stack-cell li:last-child { border-bottom: 0; }
 
         /* ============================================================
            Field Work gallery
            ============================================================ */
-        .fieldwork-intro { font-size: 1rem; color: var(--ink-soft); max-width: 74ch; margin-bottom: 36px; }
+        .fieldwork-intro { font-size: 1.0625rem; color: var(--ink-soft); max-width: 74ch; margin-bottom: 36px; }
         .gallery {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
         }
         .gallery-item {
             position: relative; overflow: hidden; cursor: zoom-in;
-            aspect-ratio: 1 / 1; border-radius: 8px; border: 1px solid var(--line);
-            background: var(--paper);
+            aspect-ratio: 1 / 1; border-radius: var(--r-lg); border: 1px solid var(--line);
+            background: var(--surface-sunken);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
+        .gallery-item:hover { box-shadow: var(--shadow-2); transform: translateY(-4px); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
         .gallery-item:hover img { transform: scale(1.05); }
         .gallery-caption {
             position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
-            padding: 14px; color: #fff;
-            background: linear-gradient(to top, rgba(20,19,15,0.82) 0%, rgba(20,19,15,0) 55%);
+            padding: 16px; color: #fff;
+            background: linear-gradient(to top, rgba(15,23,42,0.86) 0%, rgba(15,23,42,0) 58%);
             opacity: 0; transition: opacity 0.25s ease;
         }
         .gallery-item:hover .gallery-caption, .gallery-item:focus-within .gallery-caption { opacity: 1; }
-        .gallery-caption h4 { font-family: var(--display); font-size: 0.9rem; font-weight: 600; }
-        .gallery-caption p { font-family: var(--mono); font-size: 0.68rem; color: rgba(255,255,255,0.85); margin-top: 3px; }
+        .gallery-caption h4 { font-family: var(--display); font-size: 0.9375rem; font-weight: 700; }
+        .gallery-caption p { font-family: var(--mono); font-size: 0.6875rem; color: rgba(255,255,255,0.85); margin-top: 4px; }
 
         /* ============================================================
            Education & Certificates
            ============================================================ */
-        .edu-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+        .edu-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
         .sub-label {
-            font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em;
-            text-transform: uppercase; color: var(--muted); margin-bottom: 18px;
+            font-family: var(--mono); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em;
+            text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
         }
         .edu-item {
             display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
             padding: 16px 0; border-bottom: 1px solid var(--line);
         }
-        .edu-item h3 { font-family: var(--display); font-weight: 600; font-size: 1.02rem; color: var(--ink); }
-        .edu-item .school { font-size: 0.9rem; color: var(--ink-soft); }
-        .edu-item .yr { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
+        .edu-item h3 { font-family: var(--display); font-weight: 700; font-size: 1.0625rem; line-height: 1.4; color: var(--ink); }
+        .edu-item .school { font-size: 0.9375rem; color: var(--ink-soft); }
+        .edu-item .yr { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); white-space: nowrap; }
 
         .cert-item {
             display: flex; align-items: center; gap: 16px; text-decoration: none;
-            padding: 16px; border: 1px solid var(--line); border-radius: 10px;
+            padding: 20px; border: 1px solid var(--line); border-radius: var(--r-lg);
             background: var(--surface); margin-bottom: 12px;
-            transition: border-color 0.2s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
         }
-        .cert-item:hover { border-color: var(--line-strong); }
+        .cert-item:hover {
+            border-color: var(--line-strong);
+            box-shadow: var(--shadow-2); transform: translateY(-4px);
+        }
         .cert-badge {
-            flex: 0 0 auto; width: 46px; height: 46px; border-radius: 8px;
+            flex: 0 0 auto; width: 48px; height: 48px; border-radius: var(--r);
             display: grid; place-items: center; background: var(--accent-soft);
-            font-family: var(--mono); font-size: 0.62rem; color: var(--accent); text-align: center;
+            font-family: var(--mono); font-size: 0.625rem; font-weight: 500; color: var(--accent); text-align: center;
         }
-        .cert-item h4 { font-family: var(--display); font-weight: 600; font-size: 1rem; color: var(--ink); }
-        .cert-item p { font-size: 0.85rem; color: var(--ink-soft); }
-        .cert-view { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); margin-top: 4px; display: inline-block; }
+        .cert-item h4 { font-family: var(--display); font-weight: 700; font-size: 1rem; line-height: 1.4; color: var(--ink); }
+        .cert-item p { font-size: 0.875rem; color: var(--ink-soft); }
+        .cert-view { font-family: var(--mono); font-size: 0.75rem; font-weight: 500; color: var(--accent); margin-top: 4px; display: inline-block; }
 
         /* ============================================================
            About
            ============================================================ */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-        .about-grid p { color: var(--ink-soft); margin-bottom: 16px; }
-        .about-grid p strong { color: var(--ink); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+        .about-grid p { color: var(--ink-soft); margin-bottom: 16px; font-size: 1.0625rem; }
+        .about-grid p strong { color: var(--ink); font-weight: 600; }
         .about-bring { list-style: none; }
         .about-bring li {
-            font-size: 0.94rem; color: var(--ink-soft); padding: 12px 0 12px 22px;
+            font-size: 0.9375rem; color: var(--ink-soft); padding: 14px 0 14px 24px;
             border-bottom: 1px solid var(--line); position: relative;
         }
         .about-bring li::before {
             content: "→"; position: absolute; left: 0; color: var(--accent);
             font-family: var(--mono);
         }
-        .about-bring li strong { color: var(--ink); }
+        .about-bring li strong { color: var(--ink); font-weight: 600; }
 
         /* ============================================================
            References
            ============================================================ */
         .refs-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
-        .ref-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 28px; }
-        .ref-card blockquote { font-size: 1.05rem; color: var(--ink); line-height: 1.6; }
-        .ref-card blockquote::before { content: "\201C"; font-family: var(--display); color: var(--line-strong); font-size: 2.4rem; line-height: 0; vertical-align: -0.4em; margin-right: 4px; }
-        .ref-author { margin-top: 20px; }
-        .ref-name { font-family: var(--display); font-weight: 600; color: var(--ink); display: block; }
-        .ref-role { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); }
+        .ref-card {
+            background: var(--surface); border: 1px solid var(--line);
+            border-radius: var(--r-lg); padding: 32px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .ref-card:hover { box-shadow: var(--shadow-2); transform: translateY(-4px); }
+        .ref-card blockquote { font-size: 1.125rem; color: var(--ink); line-height: 1.6; }
+        .ref-card blockquote::before { content: "\201C"; font-family: var(--display); font-weight: 800; color: var(--line-strong); font-size: 2.75rem; line-height: 0; vertical-align: -0.4em; margin-right: 4px; }
+        .ref-author { margin-top: 24px; }
+        .ref-name { font-family: var(--display); font-weight: 700; color: var(--ink); display: block; }
+        .ref-role { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
         .ref-cta { display: flex; flex-direction: column; justify-content: center; gap: 12px; }
         .ref-cta p { color: var(--ink-soft); }
-        .ref-cta a { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
+        .ref-cta a { font-family: var(--mono); font-size: 0.8125rem; font-weight: 500; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 7px; }
 
         /* ============================================================
            Contact
            ============================================================ */
-        .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; }
-        .contact-list { list-style: none; margin-bottom: 26px; }
+        .contact-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
+        .contact-list { list-style: none; margin-bottom: 28px; }
         .contact-list li {
-            display: grid; grid-template-columns: 90px 1fr; gap: 14px;
-            padding: 12px 0; border-bottom: 1px solid var(--line); align-items: baseline;
+            display: grid; grid-template-columns: 90px 1fr; gap: 16px;
+            padding: 14px 0; border-bottom: 1px solid var(--line); align-items: baseline;
         }
-        .contact-list .ci-label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-        .contact-list a, .contact-list span { color: var(--ink); font-size: 0.94rem; text-decoration: none; word-break: break-word; }
+        .contact-list .ci-label { font-family: var(--mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+        .contact-list a, .contact-list span { color: var(--ink); font-size: 0.9375rem; text-decoration: none; word-break: break-word; }
         .contact-list a:hover { color: var(--accent); }
         .socials { display: flex; gap: 10px; }
         .socials a {
-            width: 42px; height: 42px; border: 1px solid var(--line-strong); border-radius: 8px;
+            width: 44px; height: 44px; border: 1px solid var(--line-strong); border-radius: var(--r);
             display: grid; place-items: center; color: var(--ink);
             transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
         }
-        .socials a:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+        .socials a:hover { border-color: var(--ink); background: var(--ink); color: #fff; }
         .socials svg { width: 19px; height: 19px; }
 
-        .form-group { margin-bottom: 18px; }
+        /* Minimalist inputs — transparent ground, hairline border, blue on focus */
+        .form-group { margin-bottom: 20px; }
         .form-group label {
-            display: block; font-family: var(--mono); font-size: 0.7rem;
-            letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+            display: block; font-family: var(--mono); font-size: 0.6875rem; font-weight: 500;
+            letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
         }
         .form-group input, .form-group textarea {
-            width: 100%; font-family: var(--body); font-size: 0.95rem; color: var(--ink);
-            background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
-            padding: 12px 14px; transition: border-color 0.2s ease;
+            width: 100%; font-family: var(--body); font-size: 0.9375rem; color: var(--ink);
+            background: transparent; border: 1px solid var(--line-strong); border-radius: var(--r);
+            padding: 12px 14px; transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: var(--muted); }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
         .form-group textarea { resize: vertical; }
-        #form-result { display: none; margin-bottom: 16px; padding: 12px 14px; border-radius: 8px; font-size: 0.9rem; font-family: var(--mono); }
+        #form-result { display: none; margin-bottom: 16px; padding: 12px 14px; border-radius: var(--r); font-size: 0.875rem; font-family: var(--mono); }
 
         /* ============================================================
            Footer
            ============================================================ */
-        .site-footer { border-top: 1px solid var(--line); padding: 56px 0 32px; }
+        .site-footer { border-top: 1px solid var(--line); padding: 64px 0 32px; }
         .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
-        .footer-about .brand { margin-bottom: 14px; }
-        .footer-about p { color: var(--ink-soft); font-size: 0.92rem; max-width: 42ch; }
-        .footer-col h4 { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+        .footer-about .brand { margin-bottom: 16px; }
+        .footer-about p { color: var(--ink-soft); font-size: 0.9375rem; max-width: 42ch; }
+        .footer-col h4 { font-family: var(--mono); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
         .footer-col ul { list-style: none; }
-        .footer-col li { padding: 5px 0; }
-        .footer-col a { font-size: 0.9rem; color: var(--ink-soft); text-decoration: none; }
+        .footer-col li { padding: 6px 0; }
+        .footer-col a { font-size: 0.9375rem; color: var(--ink-soft); text-decoration: none; transition: color 0.2s ease; }
         .footer-col a:hover { color: var(--accent); }
-        .footer-col li.tech { font-size: 0.9rem; color: var(--ink-soft); font-family: var(--mono); }
+        .footer-col li.tech { font-size: 0.875rem; color: var(--ink-soft); font-family: var(--mono); }
         .footer-bottom {
-            margin-top: 44px; padding-top: 22px; border-top: 1px solid var(--line);
+            margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line);
             display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-            font-family: var(--mono); font-size: 0.74rem; color: var(--muted);
+            font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
         }
 
         /* ============================================================
@@ -566,13 +663,17 @@
            ============================================================ */
         .lightbox {
             position: fixed; inset: 0; z-index: 2000; display: none;
-            background: rgba(20,19,15,0.92); padding: 40px;
+            background: rgba(15, 23, 42, 0.88); padding: 40px;
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
             align-items: center; justify-content: center;
         }
         .lightbox.active { display: flex; }
         .lightbox-content { max-width: 92vw; max-height: 88vh; text-align: center; }
-        .lightbox-img { max-width: 92vw; max-height: 80vh; object-fit: contain; border-radius: 8px; margin: 0 auto; }
-        .lightbox-caption { color: #fff; font-family: var(--mono); font-size: 0.82rem; margin-top: 16px; }
+        .lightbox-img {
+            max-width: 92vw; max-height: 80vh; object-fit: contain;
+            border-radius: var(--r-lg); margin: 0 auto; box-shadow: var(--shadow-overlay);
+        }
+        .lightbox-caption { color: #fff; font-family: var(--mono); font-size: 0.8125rem; margin-top: 16px; }
         .lightbox-close {
             position: absolute; top: 20px; right: 26px; background: none; border: none;
             color: #fff; font-size: 2.2rem; line-height: 1; cursor: pointer;
@@ -601,6 +702,10 @@
         /* ============================================================
            Responsive
            ============================================================ */
+        @media (max-width: 1100px) {
+            :root { --section-gap: 96px; }
+        }
+
         @media (max-width: 960px) {
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
             .spec-card { max-width: 420px; }
@@ -610,15 +715,19 @@
         }
 
         @media (max-width: 760px) {
+            /* Fluid single column; margin-mobile drops to 20px */
+            :root { --pad: 20px; --section-gap: 72px; }
+            .hero h1 { font-size: clamp(1.875rem, 8vw, 2.5rem); }
+            .section-title { font-size: 2rem; }
             .nav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0;
                 flex-direction: column; align-items: stretch; gap: 0;
                 background: var(--paper); border-bottom: 1px solid var(--line);
-                padding: 8px 16px 16px; }
+                box-shadow: var(--shadow-2);
+                padding: 8px 20px 20px; }
             .nav[data-visible="true"] { display: flex; }
-            .nav a { padding: 12px 8px; border-bottom: 1px solid var(--line); border-radius: 0; }
-            .nav a.nav-resume { margin: 8px 0 0; text-align: center; border: 1px solid var(--line-strong); border-radius: 6px; }
+            .nav a { padding: 14px 8px; border-bottom: 1px solid var(--line); border-radius: 0; }
+            .nav a.nav-resume { margin: 12px 0 0; text-align: center; border: 1px solid var(--ink); border-radius: var(--r); }
             .nav-toggle { display: grid; place-items: center; }
-            .section { padding: 68px 0; }
             /* Work table collapses into stacked blocks */
             .work-table thead { display: none; }
             .work-table, .work-table tbody, .work-table tr, .work-table td { display: block; width: auto; }
@@ -697,6 +806,69 @@
             #print-resume .r-certs li::before { content: "\2013"; position: absolute; left: 0; color: #888; }
         }
     </style>
+
+    <!-- ============================================================
+         VISITOR ANALYTICS
+         Paste your two IDs below, commit, and stats start collecting.
+         Until then both stay switched off — nothing is sent, nothing breaks.
+
+         1. Cloudflare Web Analytics (no cookies, no consent banner needed)
+            dash.cloudflare.com → Web Analytics → Add a site →
+            jasonomacabrahan.github.io → copy the 32-character token
+            Dashboard: dash.cloudflare.com → Web Analytics
+
+         2. Google Analytics 4
+            analytics.google.com → Admin → Data streams → Add stream → Web →
+            https://jasonomacabrahan.github.io → copy the Measurement ID
+            Dashboard: analytics.google.com → Reports → Realtime
+         ============================================================ -->
+    <script>
+    (function () {
+        var CLOUDFLARE_TOKEN = 'PASTE_CLOUDFLARE_TOKEN_HERE';  /* 32 hex chars, e.g. a1b2c3d4e5f6...  */
+        var GA4_MEASUREMENT_ID = 'PASTE_GA4_ID_HERE';          /* looks like G-XXXXXXXXXX            */
+
+        var cfOn = /^[a-f0-9]{32}$/i.test(CLOUDFLARE_TOKEN);
+        var gaOn = /^G-[A-Z0-9]{6,}$/i.test(GA4_MEASUREMENT_ID);
+
+        /* --- Cloudflare Web Analytics --- */
+        if (cfOn) {
+            var cf = document.createElement('script');
+            cf.defer = true;
+            cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+            cf.setAttribute('data-cf-beacon', '{"token": "' + CLOUDFLARE_TOKEN + '"}');
+            document.head.appendChild(cf);
+        }
+
+        /* --- Google Analytics 4 --- */
+        if (gaOn) {
+            var ga = document.createElement('script');
+            ga.async = true;
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_MEASUREMENT_ID;
+            document.head.appendChild(ga);
+
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function () { window.dataLayer.push(arguments); };
+            gtag('js', new Date());
+            gtag('config', GA4_MEASUREMENT_ID);
+        }
+
+        /* --- Download tracking ---
+           GA4's automatic file-download tracking does not cover .apk, so the
+           APK click is reported explicitly. Fires only when GA4 is configured. */
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!gaOn) return;
+            document.querySelectorAll('a[data-download]').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    gtag('event', 'file_download', {
+                        file_name: link.getAttribute('data-download'),
+                        file_extension: 'apk',
+                        link_url: link.href
+                    });
+                });
+            });
+        });
+    })();
+    </script>
 </head>
 <body>
     <a href="#work" class="skip-link">Skip to content</a>
@@ -808,6 +980,19 @@
                             <tr>
                                 <td class="c-no">02</td>
                                 <td class="c-proj">
+                                    <h3>Renta &mdash; Rental Payment Platform</h3>
+                                    <p>Property and rent management for a Chicago landlord. Tenants pay online, invoices generate with proration, and late fees apply automatically under lease-level rules. Postgres row-level security is the authorisation boundary, late-fee charges are made idempotent by a database index rather than a check that can race, ACH stays &ldquo;processing&rdquo; until Stripe confirms it, and every charge or waiver is audited with a mandatory reason. Tenant and landlord ship from one Flutter codebase, with a separate operations console on Cloudflare Workers.</p>
+                                </td>
+                                <td class="c-stack"><div class="project-tags"><span class="tag">Flutter</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Stripe</span><span class="tag">Cloudflare Workers</span></div></td>
+                                <td class="c-link">
+                                    <a href="downloads/renta-v1.0.0.apk" class="project-link dl" download data-download="renta-v1.0.0.apk">Download APK <span class="arw">&#8595;</span></a>
+                                    <span class="dl-meta">Android &middot; v1.0.0 &middot; 65.3&nbsp;MB</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="c-no">03</td>
+                                <td class="c-proj">
                                     <h3>Skin Pretty Shapewear</h3>
                                     <p>Shopify ecommerce store for a shapewear brand in Chicago — collection browsing, consultations, account flows, and a polished shopping experience built for conversion.</p>
                                 </td>
@@ -816,7 +1001,7 @@
                             </tr>
 
                             <tr>
-                                <td class="c-no">03</td>
+                                <td class="c-no">04</td>
                                 <td class="c-proj">
                                     <h3>L&amp;L Transport, Inc.</h3>
                                     <p>Marketing and quote-request site for a Chicago freight carrier — service breakdown for local, regional, and long-haul hauling, coverage details, and a lead capture flow. Built as a Flutter web app and shipped to Firebase Hosting with a CDN-backed install-free experience.</p>
@@ -826,7 +1011,7 @@
                             </tr>
 
                             <tr>
-                                <td class="c-no">04</td>
+                                <td class="c-no">05</td>
                                 <td class="c-proj">
                                     <h3>Taskly</h3>
                                     <p>Task management app built with Flutter to help teams organize work, manage priorities, and stay on top of daily execution through a clean cross-platform workflow.</p>
@@ -836,7 +1021,7 @@
                             </tr>
 
                             <tr>
-                                <td class="c-no">05</td>
+                                <td class="c-no">06</td>
                                 <td class="c-proj">
                                     <h3>Mabuhay Group ERP</h3>
                                     <p>Multi-module ERP consolidating HR, payroll, project management, document tracking, fleet, and finance into one platform used across every department daily.</p>
@@ -846,7 +1031,7 @@
                             </tr>
 
                             <tr>
-                                <td class="c-no">06</td>
+                                <td class="c-no">07</td>
                                 <td class="c-proj">
                                     <h3>HR Recruitment Platform</h3>
                                     <p>End-to-end recruitment system handling job postings, applicant tracking, and onboarding workflows — replacing manual HR coordination and reducing time-to-hire.</p>
@@ -856,7 +1041,7 @@
                             </tr>
 
                             <tr>
-                                <td class="c-no">07</td>
+                                <td class="c-no">08</td>
                                 <td class="c-proj">
                                     <h3>Project Management Tool</h3>
                                     <p>Kanban-style task system for Mabuhay Group — team leads assign, track, and log work across departments with full audit history.</p>
@@ -866,7 +1051,7 @@
                             </tr>
 
                             <tr>
-                                <td class="c-no">08</td>
+                                <td class="c-no">09</td>
                                 <td class="c-proj">
                                     <h3>Mabuhay Group HRIS</h3>
                                     <p>Centralized HR information system managing employee records, leave, performance data, and internal workflow approvals across the whole organization.</p>
@@ -876,7 +1061,7 @@
                             </tr>
 
                             <tr>
-                                <td class="c-no">09</td>
+                                <td class="c-no">10</td>
                                 <td class="c-proj">
                                     <h3>Bousticare E-Commerce</h3>
                                     <p>Custom-built online store for a beauty brand with inventory management, shopping cart, payment integration, and an admin dashboard — no third-party platform fees.</p>
@@ -887,7 +1072,7 @@
 
                             <!-- Hidden (revealed via "View all") -->
                             <tr class="hidden-project">
-                                <td class="c-no">10</td>
+                                <td class="c-no">11</td>
                                 <td class="c-proj">
                                     <h3>Payroll Management System</h3>
                                     <p>Automated payroll handling salary computation, tax deductions, allowances, and payslip generation — eliminating spreadsheet errors and cutting processing time.</p>
@@ -897,7 +1082,7 @@
                             </tr>
 
                             <tr class="hidden-project">
-                                <td class="c-no">11</td>
+                                <td class="c-no">12</td>
                                 <td class="c-proj">
                                     <h3>Disbursing System</h3>
                                     <p>Fund disbursement platform with multi-level approval workflows, payment records, and a full transaction audit trail — accountability at every fund release.</p>
@@ -907,7 +1092,7 @@
                             </tr>
 
                             <tr class="hidden-project">
-                                <td class="c-no">12</td>
+                                <td class="c-no">13</td>
                                 <td class="c-proj">
                                     <h3>Document Tracking System</h3>
                                     <p>Internal document routing tracking status, processing history, and office-to-office handoffs — visibility into paper trails that were impossible to monitor before.</p>
@@ -917,7 +1102,7 @@
                             </tr>
 
                             <tr class="hidden-project">
-                                <td class="c-no">13</td>
+                                <td class="c-no">14</td>
                                 <td class="c-proj">
                                     <h3>Cooperative Finance System</h3>
                                     <p>End-to-end cooperative management covering member records, loan tracking, savings accounts, financial transactions, and automated operational reporting.</p>
@@ -927,7 +1112,7 @@
                             </tr>
 
                             <tr class="hidden-project">
-                                <td class="c-no">14</td>
+                                <td class="c-no">15</td>
                                 <td class="c-proj">
                                     <h3>Quarry Management System</h3>
                                     <p>Operations platform tracking material extraction, equipment usage, job orders, and daily production — replacing manual logbooks with real-time dashboards.</p>
@@ -937,7 +1122,7 @@
                             </tr>
 
                             <tr class="hidden-project">
-                                <td class="c-no">15</td>
+                                <td class="c-no">16</td>
                                 <td class="c-proj">
                                     <h3>Fleet Management System</h3>
                                     <p>Vehicle fleet platform handling trip scheduling, driver assignment, maintenance records, and real-time status — full visibility across the fleet for ops managers.</p>
@@ -947,7 +1132,7 @@
                             </tr>
 
                             <tr class="hidden-project">
-                                <td class="c-no">16</td>
+                                <td class="c-no">17</td>
                                 <td class="c-proj">
                                     <h3>NIMOS ERP</h3>
                                     <p>Full ERP web platform for a water utility — billing management, meter reading, customer records, reporting dashboards, and cross-department coordination.</p>
@@ -957,7 +1142,7 @@
                             </tr>
 
                             <tr class="hidden-project">
-                                <td class="c-no">17</td>
+                                <td class="c-no">18</td>
                                 <td class="c-proj">
                                     <h3>Boston.gov.ph</h3>
                                     <p>Official municipal website for Boston, Davao Oriental — news, public services, and announcements through a mobile-friendly, CMS-powered portal.</p>
@@ -1688,9 +1873,9 @@
                 }
             } catch (error) {
                 resultBox.style.display = 'block';
-                resultBox.style.background = 'rgba(200,50,50,0.08)';
-                resultBox.style.color = '#b23b3b';
-                resultBox.style.border = '1px solid #b23b3b';
+                resultBox.style.background = 'var(--error-container)';
+                resultBox.style.color = 'var(--on-error-container)';
+                resultBox.style.border = '1px solid var(--error)';
                 resultBox.textContent = '✗ Something went wrong. Please try again or email me directly.';
             }
 
